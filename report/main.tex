@@ -1,0 +1,111 @@
+% ---------------------------------------------------------------------
+% LICENSE (MIT)
+% ---------------------------------------------------------------------
+% Copyright 2019 Romain Claret (github.com/Penguinazor), claret.tech
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+% ---------------------------------------------------------------------
+% ABOUT
+% ---------------------------------------------------------------------
+% Master Thesis for the Master of Engineering (MSE) at University of Applied Sciences and Arts Western Switzerland (HES-SO), Switzerland
+%
+% Inspired by the EPFL Template
+% https://github.com/glederrey/EPFL_thesis_template/
+
+% ---------------------------------------------------------------------
+% SETTINGS
+% ---------------------------------------------------------------------
+\include{00-settings/settings_mse_template}
+\include{00-settings/settings_custom}
+\include{00-settings/settings_meta}
+
+% ---------------------------------------------------------------------
+% DOCUMENT STARTS HERE
+% ---------------------------------------------------------------------
+\begin{document}
+
+% ---------------------------------------------------------------------
+% TITLE PAGE
+% ---------------------------------------------------------------------
+\frontmatter
+\include{01-head/title_page}
+\cleardoublepage
+
+% ---------------------------------------------------------------------
+% STUDENT INFORMATION
+% ---------------------------------------------------------------------
+\include{01-head/author_info}
+
+% ---------------------------------------------------------------------
+% DEDICATE
+% ---------------------------------------------------------------------
+\include{01-head/dedicate}
+
+% ---------------------------------------------------------------------
+% TABLE OF CONTENTS
+% ---------------------------------------------------------------------
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+% ---------------------------------------------------------------------
+% ACKNOWLEDGMENTS
+% ---------------------------------------------------------------------
+\include{01-head/acknowledgments}
+
+% ---------------------------------------------------------------------
+% GLOSSARY
+% ---------------------------------------------------------------------
+\include{01-head/glossary}
+\printglossaries
+\cleardoublepage
+
+% ---------------------------------------------------------------------
+% ABSTRACT
+% ---------------------------------------------------------------------
+\include{01-head/abstract}
+
+% ---------------------------------------------------------------------
+% MAIN
+% ---------------------------------------------------------------------
+\mainmatter
+
+% ---------------------------------------------------------------------
+% CHAPTERS
+% ---------------------------------------------------------------------
+\include{02-body/introduction}
+\include{02-body/tasks}
+\include{02-body/state_of_the_art}
+%\include{02-body/analysis}
+%\include{02-body/results}
+%\include{02-body/discussion}
+%\include{02-body/conclusion}
+%\cleardoublepage
+
+% ---------------------------------------------------------------------
+% BIBLIOGRAPHY
+% ---------------------------------------------------------------------
+\backmatter
+%\printbibliography[title={References}, heading=bibintoc]
+%\bibliography{03-tail/bibliography}
+%\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography[heading=bibintoc]
+%\cleardoublepage
+
+% ---------------------------------------------------------------------
+% APPENDIX
+% ---------------------------------------------------------------------
+%\appendix
+%\include{03-tail/appendix}
+%\cleardoublepage
+
+% ---------------------------------------------------------------------
+% DOCUMENT ENDS HERE
+% ---------------------------------------------------------------------
+\end{document}

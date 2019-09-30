@@ -1,0 +1,137 @@
+% ---------------------------------------------------------------------
+% DEFAULT TEMPLATE SETTINGS FOR MASTER OF ENGINEERING
+% ---------------------------------------------------------------------
+\documentclass[a4paper,11pt,openright]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[english]{babel}
+
+% ---------------------------------------------------------------------
+% PAGE STYLING
+% ---------------------------------------------------------------------
+\usepackage[margin=3cm, left=3.5cm, right=3.5cm, twoside=true]{geometry}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection}}
+\pagestyle{fancy}
+
+\def\oddcleaner{\clearpage
+\ifodd\value{page}\else\mbox{}\thispagestyle{empty}\newpage\fi
+}
+
+\def\clearchap{\ifodd\value{page}\else\mbox{}\thispagestyle{empty}\fi}
+
+\let\origdoublepage\cleardoublepage
+\renewcommand{\cleardoublepage}{\oddcleaner}
+
+\usepackage{titlesec}
+\newcommand*{\justifyheading}{\raggedleft}
+\titleformat{\chapter}[display]{\normalfont\huge\bfseries\justifyheading}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+
+% ---------------------------------------------------------------------
+% FIRST PAGE STYLING
+% https://www.overleaf.com/learn/latex/Headers_and_footers
+% ---------------------------------------------------------------------
+\fancypagestyle{plain}{
+	\fancyhf{}
+}
+
+% ---------------------------------------------------------------------
+% COMMON PAGE STYLING
+% ---------------------------------------------------------------------
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[OR]{\bfseries \nouppercase{\rightmark}}
+\fancyhead[EL]{\bfseries \nouppercase{\leftmark}}
+\fancyfoot[EL,OR]{\thepage}
+\fancyfoot[OC, EC]{\ThesisType, \ThesisTitle}
+
+\usepackage{enumitem}
+
+% ---------------------------------------------------------------------
+% FONTS
+% ---------------------------------------------------------------------
+\usepackage{helvet} %Arial
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------------------------------------------------------------------
+% TABLES
+% ---------------------------------------------------------------------
+\usepackage{tabularx}
+
+% ---------------------------------------------------------------------
+% MATHEMATICS
+% ---------------------------------------------------------------------
+%\usepackage{amsmath}
+
+% ---------------------------------------------------------------------
+% GRAPHICS
+% ---------------------------------------------------------------------
+\usepackage{float}
+\usepackage{ifpdf}
+\ifpdf
+	\usepackage[pdftex]{graphicx}
+\else
+	\usepackage[dvips]{graphicx}
+\fi
+
+\graphicspath{{98-figures/}}
+
+% ---------------------------------------------------------------------
+% REFERENCES
+% ---------------------------------------------------------------------
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+\bibliography{03-tail/bibliography}
+
+%style=verbose-trad2
+%\usepackage[
+%backend=biber,
+%style=verbose-trad2,%numeric,
+%sorting=none,
+%bibencoding=auto
+%]{biblatex}
+%\addbibresource{03-tail/bibliography.bib}
+
+\usepackage[nonumberlist,acronym,toc,style=altlist]{glossaries}
+\input{01-head/glossary.tex}
+\makeglossaries
+
+% ---------------------------------------------------------------------
+% MISCELLANEOUS
+% ---------------------------------------------------------------------
+\usepackage{lipsum}
+\usepackage{todonotes}
+
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage[graphicx]{realboxes}
+
+\usepackage{dirtytalk}
+
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{multirow}
+
+%code
+\usepackage{listings}
+
+%use of the degree
+\usepackage{siunitx}
+\usepackage{textcomp}
+
+%include pdf pages
+\usepackage{pdfpages}
+
+%\usepackage{pgfplots}
+%\usetikzlibrary{matrix, positioning}
+%\usepackage{lmodern}
+
+%\usepackage{caption}
