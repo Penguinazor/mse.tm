@@ -1,7 +1,7 @@
 % ---------------------------------------------------------------------
 % LICENSE (MIT)
 % ---------------------------------------------------------------------
-% Copyright 2019 Romain Claret (github.com/Penguinazor), claret.tech
+% Copyright 2019 Romain Claret (github.com/RomainClaret), claret.tech
 %
 % Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 %
@@ -16,6 +16,8 @@
 %
 % Inspired by the EPFL Template
 % https://github.com/glederrey/EPFL_thesis_template/
+
+
 
 % ---------------------------------------------------------------------
 % SETTINGS
@@ -37,8 +39,17 @@
 \cleardoublepage
 
 % ---------------------------------------------------------------------
+% TITLE PAGE
+% ---------------------------------------------------------------------
+\mainmatter
+\include{01-head/specifications}
+\cleardoublepage
+
+% ---------------------------------------------------------------------
 % STUDENT INFORMATION
 % ---------------------------------------------------------------------
+\frontmatter
+\setcounter{page}{1}
 \include{01-head/author_info}
 
 % ---------------------------------------------------------------------
@@ -72,6 +83,11 @@
 \include{01-head/abstract}
 
 % ---------------------------------------------------------------------
+% HOW TO READ
+% ---------------------------------------------------------------------
+\include{01-head/how_to_read}
+
+% ---------------------------------------------------------------------
 % MAIN
 % ---------------------------------------------------------------------
 \mainmatter
@@ -79,13 +95,43 @@
 % ---------------------------------------------------------------------
 % CHAPTERS
 % ---------------------------------------------------------------------
-\include{02-body/introduction}
-\include{02-body/tasks}
-\include{02-body/state_of_the_art}
-%\include{02-body/analysis}
-%\include{02-body/results}
-%\include{02-body/discussion}
-%\include{02-body/conclusion}
+% PART 1
+\part{Project preface}
+\include{02-body/1_introduction}
+\cleardoublepage
+
+% PART 2
+\part{State-of-the-art}
+\include{02-body/2_chatbots}
+\include{02-body/2_nlp}
+%\include{02-body/2_language_models}
+\include{02-body/2_generative_models}
+%\include{02-body/2_mu_mr}
+\include{02-body/2_question_answering}
+%\include{02-body/2_zero_shot}
+\include{02-body/2_datasets}
+\include{02-body/2_evaluation}
+\include{02-body/2_problems}
+\include{02-body/2_conclusions}
+
+%\include{02-body/state_of_the_art}
+\cleardoublepage
+
+%PART 3
+%\part{Design and realization}
+%\include{02-body/3_analysis}
+%\include{02-body/3_project_management}
+%\include{02-body/3_architecture}
+%\include{02-body/3_graphqa}
+%\include{02-body/3_conclusions}
+%\cleardoublepage
+
+% PART 4
+%\part{Retrospective}
+%\include{02-body/4_results}
+%\include{02-body/4_discussion}
+%\include{02-body/4_project_management}
+%\include{02-body/4_conclusions}
 %\cleardoublepage
 
 % ---------------------------------------------------------------------
@@ -98,12 +144,19 @@
 \printbibliography[heading=bibintoc]
 %\cleardoublepage
 
+
+% ---------------------------------------------------------------------
+% LIST OF FIGURES AND TABLES
+% ---------------------------------------------------------------------
+\listoffigures
+\listoftables
+
 % ---------------------------------------------------------------------
 % APPENDIX
 % ---------------------------------------------------------------------
-%\appendix
-%\include{03-tail/appendix}
-%\cleardoublepage
+\appendix
+\include{03-tail/appendix}
+\cleardoublepage
 
 % ---------------------------------------------------------------------
 % DOCUMENT ENDS HERE

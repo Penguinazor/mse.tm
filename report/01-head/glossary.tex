@@ -9,12 +9,345 @@
 % format:  \newglossaryentry{<label>}{<settings>}
 % example: \newglossaryentry{adagrad}
 % ---------------------------------------------------------------------
-\newglossaryentry{adagrad}
+\newglossaryentry{model}
 {
-  name=Model,
-  description={In \gls{ml}, a model is the representation of the assumptions made by the algorithm during the training phase. Models are used to output a result based on a provided input and the learning patterns.}
+  name={Model},
+  description={In \glsfirst{ml}, a model is the representation of the assumptions made by the algorithm during the training phase. Models are used to output a result based on a provided input and the learned patterns}
 }
-	
+
+\newglossaryentry{transformer}
+{
+  name={Transformer},
+  description={In \glsfirst{nlp}, a Transformer is a \glsfirst{seq2seq} architecture using the \glsfirst{attention}.}
+}
+
+\newglossaryentry{gseq2seq}
+{
+  name={Sequence-to-Sequence},
+  description={In \glsfirst{ml}, a Sequence-to-Sequence or Seq2Seq is an \glsfirst{enc-dec} \glsfirst{nn} that for a given sequence of elements as input, outputs another sequence of elements}
+}
+\newglossaryentry{seq2seq}
+{
+  type=\acronymtype,
+  name={Seq2Seq},
+  description={Sequence-to-Sequence},
+  first={Sequence-to-Sequence (Seq2Seq)\glsadd{gseq2seq}},
+  see=[Glossary:]{gseq2seq}
+}
+
+\newglossaryentry{enc-dec}
+{
+  name={Encoder-Decoder},
+  description={In \glsfirst{ml}, Encoder-Decoder is two \glspl{nn} that work in pair. The Encoder generates a fixed-size output vector from any sized vector input. And the Decoder generates from the Encoder output a vector that could be any size}
+}
+
+\newglossaryentry{attention}
+{
+  name={Attention Mechanism},
+  description={In \glsfirst{nlp}, the Attention Mechanism is an algorithm used to calculate the relational weight between elements in a sequence of elements (most often words)}
+}
+
+\newglossaryentry{model-ft}
+{
+  name={Model Fine-Tuning},
+  description={In \glsfirst{ml}, Fine Tuning a \glsfirst{model} is the technique of using a trained \glsfirst{nn} model as a base and tune it for a specific task}
+}
+
+\newglossaryentry{gkg}
+{
+  name={Knowledge Graph},
+  description={In \glsfirst{is}, a Knowledge Graph is a \glsfirst{kb} organized as a graph using semantics}
+}
+\newglossaryentry{kg}
+{
+  type=\acronymtype,
+  name={KG},
+  description={Knowledge Graph},
+  first={Knowledge Graph (KG)\glsadd{gkg}},
+  see=[Glossary:]{gkg}
+}
+
+\newglossaryentry{gkb}
+{
+  name={Knowledge Base},
+  description={In \glsfirst{is}, a Knowledge Base is a Knowledge Representation using a \glsfirst{linked-data} database for storing and interlinking structured and unstructured data using a standard}
+}
+\newglossaryentry{kb}
+{
+  type=\acronymtype,
+  name={KB},
+  description={Knowledge Base},
+  first={Knowledge Base (KB)\glsadd{gkb}},
+  see=[Glossary:]{gkb}
+}
+
+
+\newglossaryentry{linked-data}
+{
+  name={Linked Data},
+  description={In \glsfirst{is}, Linked Data is a structured interlinked database mainly used for semantic queries}
+}
+
+\newglossaryentry{glm}
+{
+  name={Language Model},
+  description={In \glsfirst{nlp}, a Language Model is a \glsfirst{model} trained to provide likelihood probabilities of the following sequence of words in addition at providing the probability for each sequences of words}
+}
+\newglossaryentry{lm}
+{
+  type=\acronymtype,
+  name={LM},
+  description={Language Model},
+  first={Language Model (LM)\glsadd{glm}},
+  see=[Glossary:]{glm}
+}
+
+\newglossaryentry{gmrr}
+{
+  name={Mean Reciprocal Rank},
+  description={In \glsfirst{ir}, the Mean Reciprocal Rank provides a statistic measure of the quality of a returned ranked list of items for a query. MRR takes only in account the highest-ranked relevant item to the query}
+}
+\newglossaryentry{mrr}
+{
+  type=\acronymtype,
+  name={MRR},
+  description={Mean Reciprocal Rank},
+  first={Mean Reciprocal Rank (MRR)\glsadd{gmrr}},
+  see=[Glossary:]{gmrr}
+}
+
+
+\newglossaryentry{sh}
+{
+  name={Single-Hop},
+  description={In \glsfirst{qa} Systems, a Single-Hop implies that the answer is within a single \gls{hop} of the question. Generally, a unique Predicate separates the question Subject and the answer Object}
+}
+
+\newglossaryentry{hop}
+{
+  name={Hop},
+  description={In \glsfirst{qa} Systems, a Hop is a quantitative measure of the number of combinations necessary between indirectly related pieces of information to provide an answer}
+}
+
+
+\newglossaryentry{mh}
+{
+  name={Multi-Hop},
+  description={In \glsfirst{qa} Systems, a Multi-Hop implies that the answer is within multiple \gls{hop} of the question. In other words, the answer requires a combination of different information to be answerable. Generally, extra qualifying \glsfirst{spo} are separating the question Subject and the answer Object}
+}
+
+\newglossaryentry{we}
+{
+  name={Word Embedding},
+  description={In \glsfirst{nlp}, the Word Embedding is a technique for word representation as vectors in an embedding matrix. Additionally, it has often the particularity of preserving the semantical analogies of word-vectors}
+}
+
+\newglossaryentry{pos}
+{
+  name={Part of Speech},
+  description={In \glsfirst{nlp}, Part of Speech is a technique used to categorize words that behave syntactically similarly}
+}
+
+\newglossaryentry{pos-tag}
+{
+  name={Part of Speech Tagging},
+  description={In \glsfirst{nlp}, The Part of Speech Tagging is extending the \glsfirst{pos} by adding a label to the word depending on its context (the neighboring words)}
+}
+
+
+\newglossaryentry{ner}
+{
+  name={Named-Entity Recognition},
+  description={In \glsfirst{ie}, Named-Entity Recognition is a technique used to extract from unstructured text words predefined in a vocabulary}
+}
+
+\newglossaryentry{nel}
+{
+  name={Named-Entity Linking},
+  description={In \glsfirst{nlp}, Name-Entity Linking extends the \glsfirst{ner} by providing an unique identifier to each word allowing a mapping in various databases (useful in translations)}
+}
+
+\newglossaryentry{open-domain}
+{
+  name={Open Domain},
+  description={In \glsfirst{ir}, the support of Open Domain questions provides a no restrictions for the theme of the question asked}
+}
+
+\newglossaryentry{closed-ended}
+{
+  name={Close-ended},
+  description={A closed-ended question is designed to allow a limited amount of responses}
+}
+
+\newglossaryentry{zero-shot}
+{
+  name={Zero-Shot Learning},
+  description={In \glsfirst{ml}, Zero-Shot Learning is technique used to solve tasks without training on examples}
+}
+
+\newglossaryentry{few-shot}
+{
+  name={Few-Shot Learning},
+  description={In \glsfirst{ml}, Few-Shot Learning is technique used to solve tasks with a very small amount of training data}
+}
+
+\newglossaryentry{generative-model}
+{
+  name={Generative Model},
+  description={In \glsfirst{ml}, Generative Models are generating random outputs from a single input by using the probability of observing the output based on the input. In other words, it models the probability of observation for a given target}
+}
+
+\newglossaryentry{generative}
+{
+  name={Generative},
+  description={In the context of the Thesis, we are using the generic word Generative as the ability concept of an algorithm able generating outputs in a meaningful but unpredictable manner from an input, which includes \glspl{lm} and \glspl{generative-model}}
+}
+
+\newglossaryentry{gweak-ai}
+{
+  name={Weak Artificial Intelligences},
+  description={In the context of the \gls{ai}, }
+}
+
+\newglossaryentry{weak-ai}
+{
+  type=\acronymtype,
+  name={Weak AI},
+  description={Weak Artificial Intelligence},
+  first={Weak Artificial Intelligence (Weak AI)\glsadd{gweak-ai}},
+  see=[Glossary:]{gweak-ai}
+}
+
+\newglossaryentry{gl}
+{
+  name={Ground Learning},
+  description={In the context of the \gls{ai}, Grounded Learning is based on the Grounded theory from the social sciences, which uses inductive reasoning. In the context of \gls{ai}, it is the mechanism of combining structured and unstructured data as small conceptual parts to then apply machine reasoning}
+}
+
+
+\newglossaryentry{gmdp}
+{
+  name={Markov Decision Process},
+  description={In the context of the \gls{rl}, this process models the ability of a predicting the next state of a finite-state machine-like process, such as a game, with only the information contained in the present state}
+}
+
+\newglossaryentry{mdp}
+{
+  type=\acronymtype,
+  name={MDP},
+  description={Markov Decision Process},
+  first={Markov Decision Process (MDP)\glsadd{gmdp}},
+  see=[Glossary:]{gmdp}
+}
+
+\newglossaryentry{grl}
+{
+  name={Reinforcement Learning},
+  description={In \gls{ml}, this type of learning combines generally a \gls{mdp} environment with an approach similar to \gls{ul} as it does not require labelled data. The particularity of this technique is that it uses a notion of rewards to predict the best next-step by running a large amount of simulation as training}
+}
+
+\newglossaryentry{rl}
+{
+  type=\acronymtype,
+  name={RL},
+  description={Reinforcement Learning},
+  first={Reinforcement Learning (RL)\glsadd{grl}},
+  see=[Glossary:]{grl}
+}
+
+\newglossaryentry{gul}
+{
+  name={Unsupervised Learning},
+  description={In \gls{ml}, this type of learning implies the uses of unlabelled datasets to perform the training}
+}
+
+\newglossaryentry{ul}
+{
+  type=\acronymtype,
+  name={UL},
+  description={Unsupervised Learning},
+  first={Unsupervised Learning (UL)\glsadd{gul}},
+  see=[Glossary:]{gul}
+}
+
+\newglossaryentry{gsl}
+{
+  name={Supervised Learning},
+  description={In \gls{ml}, this type of learning implies the uses of labelled datasets to perform the training}
+}
+
+\newglossaryentry{sl}
+{
+  type=\acronymtype,
+  name={SL},
+  description={Supervised Learning},
+  first={Supervised Learning (SL)\glsadd{gsl}},
+  see=[Glossary:]{gsl}
+}
+
+\newglossaryentry{gal}
+{
+  name={Adversarial Learning},
+  description={In \gls{ml}, the concept of this technique relies on trying to fool models via malicious inputs. It can be interpreted as a game  a model is playing with itself by modifying the input in such a way that the model will recognize it as another input then learn from its mistake}
+}
+
+\newglossaryentry{al}
+{
+  type=\acronymtype,
+  name={AL},
+  description={Adversarial Learning},
+  first={Adversarial Learning (AL)\glsadd{gal}},
+  see=[Glossary:]{gal}
+}
+
+\newglossaryentry{gmu}
+{
+  name={Machine Understanding},
+  description={In \gls{ml}, Machine Understanding stays ambiguous in its definition. However, we use the term as the ability of representing knowledge at an atomic building blocks and fundamental relations}
+}
+
+\newglossaryentry{mu}
+{
+  type=\acronymtype,
+  name={MU},
+  description={Machine Understanding},
+  first={Machine Understanding (MU)\glsadd{gmu}},
+  see=[Glossary:]{gmu}
+}
+
+\newglossaryentry{gmr}
+{
+  name={Machine Reasoning},
+  description={In \gls{ml}, Machine Reasoning represent the ability to apply reasoning for a given input by using knowledge representations and logic patterns such as inductions, analogies, or abductions}
+}
+
+\newglossaryentry{mr}
+{
+  type=\acronymtype,
+  name={MR},
+  description={Machine Reasonsing},
+  first={Machine Reasoning (MR)\glsadd{gmr}},
+  see=[Glossary:]{gmr}
+}
+
+
+\newglossaryentry{gsnn}
+{
+  name={Shallow Neural Network},
+  description={In \gls{ml}, similar to \gls{dl}, Shallow Neural Networks have a \gls{enc-dec} approach by having a single hidden layer, which often has a high amount of parameters}
+}
+
+\newglossaryentry{snn}
+{
+  type=\acronymtype,
+  name={SNN},
+  description={Shallow Neural Network},
+  first={Shallow Neural Network (SNN)\glsadd{gsnn}},
+  see=[Glossary:]{gsnn}
+}
+
+
+
 
 
 
@@ -40,19 +373,30 @@
 \newacronym{faq}{FAQ}{Frequently Asked Questions}
 \newacronym{rnn}{RNN}{Recurrent Neural Network}
 \newacronym{ir}{IR}{Information Retrieval}
+\newacronym{is}{IS}{Information Systems}
 \newacronym{dm}{DM}{Data Mining}
 \newacronym{bd}{BD}{Big Data}
 \newacronym{dl}{DL}{Deep Learning}
 \newacronym{nn}{NN}{Neural Network}
-\newacronym{snn}{SNN}{Shallow Neural Network}
 \newacronym{nl}{NL}{Natural Language}
 \newacronym{tf-idf}{TF-IDF}{Term Frequency-Inverse Document Frequency}
 \newacronym{cbow}{CBOW}{Continuous Bag of words}
 \newacronym{aws}{AWS}{Amazon Web Services}
 \newacronym{dp}{DP}{Deepening Project}
-\newacronym{s2s}{Seq2Seq}{Sequence to Sequence}
 \newacronym{mt}{MT}{Master's Thesis}
 \newacronym{poc}{POC}{Proof of Concept}
 \newacronym{mvp}{MVP}{Minimum Viable Product}
 \newacronym{kiss}{KISS}{Keep It Stupid Simple}
 \newacronym{qa}{QA}{Question Answering}
+\newacronym{gs}{GS}{Generative System}
+\newacronym{cnn}{CNN}{Convolutional Neural Network}
+\newacronym{mn}{MN}{Memory Network}
+\newacronym{bert}{BERT}{Bidirectional Encoder Representations from Transformers}
+\newacronym{gpt2}{GPT-2}{Generative Pre-Training 2}
+\newacronym{spo}{SPO}{Subject-Predicate-Object Tuple}
+\newacronym{ie}{IE}{Information Extraction}
+\newacronym{sota}{SOTA}{State of the Art}
+\newacronym{gan}{GAN}{Generative Adversarial Networks}
+\newacronym{oov}{OOV}{Out-of-Vocabulary}
+\newacronym{ce}{CE}{Character Embedding}
+

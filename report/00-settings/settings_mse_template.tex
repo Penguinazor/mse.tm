@@ -14,6 +14,7 @@
 \usepackage[margin=3cm, left=3.5cm, right=3.5cm, twoside=true]{geometry}
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
+%\setlength{\parskip}{\baselineskip}
 \renewcommand{\sectionmark}[1]{\markright{\thesection}}
 \pagestyle{fancy}
 
@@ -49,7 +50,7 @@
 \fancyhead[OR]{\bfseries \nouppercase{\rightmark}}
 \fancyhead[EL]{\bfseries \nouppercase{\leftmark}}
 \fancyfoot[EL,OR]{\thepage}
-\fancyfoot[OC, EC]{\ThesisType, \ThesisTitle}
+\fancyfoot[OC, EC]{\ThesisType: \ThesisTitle}
 
 \usepackage{enumitem}
 
@@ -88,8 +89,9 @@
 \usepackage{hyperref}
 \usepackage{url}
 
-\usepackage[backend=bibtex,style=numeric]{biblatex}
+\usepackage[backend=bibtex,style=iso-authoryear]{biblatex}
 \bibliography{03-tail/bibliography}
+%style=numeric
 
 %style=verbose-trad2
 %\usepackage[
@@ -101,14 +103,23 @@
 %\addbibresource{03-tail/bibliography.bib}
 
 \usepackage[nonumberlist,acronym,toc,style=altlist]{glossaries}
-\input{01-head/glossary.tex}
 \makeglossaries
+\input{01-head/glossary.tex}
+
 
 % ---------------------------------------------------------------------
 % MISCELLANEOUS
 % ---------------------------------------------------------------------
+\usepackage{marginnote}
+
 \usepackage{lipsum}
-\usepackage{todonotes}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}%,textsize=tiny
+\usepackage{regexpatch}
+\makeatletter
+\xpatchcmd{\@todo}{\setkeys{todonotes}{#1}}{\setkeys{todonotes}{inline,#1}}{}{}
+\makeatother
+%\blindtext\todo{Default inline}
+%\blindtext\todo[color=blue!20!white]{Custom inline}
 
 \usepackage{pgfgantt}
 \usepackage{rotating}
