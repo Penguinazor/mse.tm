@@ -126,7 +126,7 @@ Falling in a particularly rare research field of \gls{ml} and \gls{nlp}, \gls{gl
 \section{Question-Answering Chatbots}
 \gls{qa} is a prevalent task for chatbots; indeed, they are widely used for questioning tasks in either Single or \gls{open-domain}, Open or \gls{closed-ended}, Single or \gls{mh} with applications such as FAQs, Supports, help to find the meaning of life, and so on. Due to the broadness of the field, no defined methodology has been generalized; instead, it uses either one or multiple techniques described in the previous sections. It is interesting to note that the field of \gls{qa} is raising a lot of interest in \gls{nlp} research lately, and the benchmarking game of creating the new baselines, with increasingly complex datasets, is still in progress. In this section, we will overview some recent baselines.
 
-\paragraph{Fine-Tunning Language Models} Large \gls{lm} such as BERT \autocite{paper:devlin-etal-2019-bert} or GPT-2 \autocite{papers:gpt2} are used with \gls{qa} datasets similar to SQUAD 2.0 \autocite{paper:rajpurkar-etal-2018-know} which are particularly treaky, even for humans.
+\paragraph{Fine-Tunning Language Models} Large \gls{lm} such as BERT \autocite{paper:devlin-etal-2019-bert} or GPT-2 \autocite{papers:gpt2} are often fine-tuned on \gls{qa} datasets similar to SQUAD 2.0 \autocite{paper:rajpurkar-etal-2018-know} which are particularly tricky, even for humans.
 
 \paragraph{Querying Models} Based on \gls{qa} datasets, a model is trained to fill structured templates.  The generated output is a structured query for a particular querying language such as SPARQL for Wikidata. 
 
@@ -137,7 +137,7 @@ Falling in a particularly rare research field of \gls{ml} and \gls{nlp}, \gls{gl
 In this section, we are non-exhaustively naming a few recurring features appearing during our targeted research.
 
 \subsection{Context}
-Humans are intuitively and extensively relying on the context for conversational purposes, chatbots relying on dialogue as part of their task, requires the capacity to hold context. On a side note, one-way style dialogues such as commands or questions with no within questions do not need context holding to perform well.
+Humans are intuitively and extensively relying on the context for conversational purposes, chatbots relying on dialogue as part of their task, requires the capacity to hold context. On a side note, one-way style dialogues such as commands or none-nested questions do not need to hold context to perform well.
 
 \paragraph{Short term context} Implying the ability for the bot to hold context for at least the current conversation, e.g., few keywords or on-the-fly \gls{model-ft}.
 

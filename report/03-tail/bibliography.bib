@@ -342,13 +342,249 @@ year = {2019},
 note = {(Accessed on 10/09/2019)}
 }
 
-@misc{wikipedia:snn,
-  author = "{Glosser.ca}",
-  title = "File:Colored neural network.svg",
-  year = "2013",
-  url = "https://commons.wikimedia.org/wiki/File:Colored_neural_network.svg",
-  note = "[Online; accessed 26-May-2019]"
-  license = "Public domain"
+@article{paper:journals/corr/HerbelotB17,
+  author    = {Aur{\'{e}}lie Herbelot and
+               Marco Baroni},
+  title     = {High-risk learning: acquiring new word vectors from tiny data},
+  journal   = {CoRR},
+  volume    = {abs/1707.06556},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1707.06556},
+  archivePrefix = {arXiv},
+  eprint    = {1707.06556},
+  timestamp = {Mon, 13 Aug 2018 16:48:56 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/HerbelotB17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{paper:journals/corr/PinterGE17,
+  author    = {Yuval Pinter and
+               Robert Guthrie and
+               Jacob Eisenstein},
+  title     = {Mimicking Word Embeddings using Subword RNNs},
+  journal   = {CoRR},
+  volume    = {abs/1707.06961},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1707.06961},
+  archivePrefix = {arXiv},
+  eprint    = {1707.06961},
+  timestamp = {Mon, 13 Aug 2018 16:46:53 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/PinterGE17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{paper:ma-etal-2016-label,
+    title = "Label Embedding for Zero-shot Fine-grained Named Entity Typing",
+    author = "Ma, Yukun  and
+      Cambria, Erik  and
+      Gao, Sa",
+    booktitle = "Proceedings of {COLING} 2016, the 26th International Conference on Computational Linguistics: Technical Papers",
+    month = dec,
+    year = "2016",
+    address = "Osaka, Japan",
+    publisher = "The COLING 2016 Organizing Committee",
+    url = "https://www.aclweb.org/anthology/C16-1017",
+    pages = "171--180",
+    abstract = "Named entity typing is the task of detecting the types of a named entity in context. For instance, given {``}Eric is giving a presentation{''}, our goal is to infer that {`}Eric{'} is a speaker or a presenter and a person. Existing approaches to named entity typing cannot work with a growing type set and fails to recognize entity mentions of unseen types. In this paper, we present a label embedding method that incorporates prototypical and hierarchical information to learn pre-trained label embeddings. In addition, we adapt a zero-shot learning framework that can predict both seen and previously unseen entity types. We perform evaluation on three benchmark datasets with two settings: 1) few-shots recognition where all types are covered by the training set; and 2) zero-shot recognition where fine-grained types are assumed absent from training set. Results show that prior knowledge encoded using our label embedding methods can significantly boost the performance of classification for both cases.",
+}
+
+@article{paper:journals/corr/KimJSR15,
+  author    = {Yoon Kim and
+               Yacine Jernite and
+               David A. Sontag and
+               Alexander M. Rush},
+  title     = {Character-Aware Neural Language Models},
+  journal   = {CoRR},
+  volume    = {abs/1508.06615},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1508.06615},
+  archivePrefix = {arXiv},
+  eprint    = {1508.06615},
+  timestamp = {Fri, 15 Nov 2019 17:16:01 +0100},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/KimJSR15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+  abstract	= {We describe a simple neural language model that relies only on character-level inputs. Predictions are still made at the word-level. Our model employs a convolutional neural network (CNN) and a highway network over characters, whose output is given to a long short-term memory (LSTM) recurrent neural network language model (RNN-LM). On the English Penn Treebank the model is on par with the existing state-of-the-art despite having 60% fewer parameters. On languages with rich morphology (Arabic, Czech, French, German, Spanish, Russian), the model outperforms word-level/morpheme-level LSTM baselines, again with fewer parameters. The results suggest that on many languages, character inputs are sufficient for language modeling. Analysis of word representations obtained from the character composition part of the model reveals that the model is able to encode, from characters only, both semantic and orthographic information.}
+}
+
+@inproceedings{paper:conf/icml/SantosZ14,
+  added-at = {2018-11-26T22:08:31.000+0100},
+  author = {dos Santos, Cícero Nogueira and Zadrozny, Bianca},
+  biburl = {https://www.bibsonomy.org/bibtex/2b2b3fb1e9cc6589cff42c01705fe6dbe/florianpircher},
+  booktitle = {ICML},
+  crossref = {conf/icml/2014},
+  ee = {http://jmlr.org/proceedings/papers/v32/santos14.html},
+  interhash = {07d9dda35154defe5091ac197bc7ed1f},
+  intrahash = {b2b3fb1e9cc6589cff42c01705fe6dbe},
+  keywords = {final pos_tagging thema:sequence_labeling},
+  pages = {1818-1826},
+  publisher = {JMLR.org},
+  series = {JMLR Workshop and Conference Proceedings},
+  timestamp = {2018-11-27T09:38:32.000+0100},
+  title = {Learning Character-level Representations for Part-of-Speech Tagging.},
+  url = {http://dblp.uni-trier.de/db/conf/icml/icml2014.html#SantosZ14},
+  volume = 32,
+  year = 2014
+}
+
+@inproceedings{paper:conf/ijcai/ChenXLSL15,
+  author    = {Xinxiong Chen and
+               Lei Xu and
+               Zhiyuan Liu and
+               Maosong Sun and
+               Huan{-}Bo Luan},
+  title     = {Joint Learning of Character and Word Embeddings},
+  booktitle = {Proceedings of the Twenty-Fourth International Joint Conference on
+               Artificial Intelligence, {IJCAI} 2015, Buenos Aires, Argentina, July
+               25-31, 2015},
+  pages     = {1236--1242},
+  year      = {2015},
+  crossref  = {DBLP:conf/ijcai/2015},
+  url       = {http://ijcai.org/Abstract/15/178},
+  timestamp = {Tue, 20 Aug 2019 16:18:00 +0200},
+  biburl    = {https://dblp.org/rec/bib/conf/ijcai/ChenXLSL15},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@InProceedings{paper:2017HaoYetal,
+author="Hao, Yazhou
+and Zheng, Qinghua
+and Lan, Yangyang
+and Li, Yufei
+and Wang, Meng
+and Wang, Sen
+and Li, Chen",
+editor="Cong, Gao
+and Peng, Wen-Chih
+and Zhang, Wei Emma
+and Li, Chengliang
+and Sun, Aixin",
+title="Improving Chinese Sentiment Analysis via Segmentation-Based Representation Using Parallel CNN",
+booktitle="Advanced Data Mining and Applications",
+year="2017",
+publisher="Springer International Publishing",
+address="Cham",
+pages="668--680",
+abstract="Automatically analyzing sentimental implications in texts relies on well-designed models utilizing linguistic features. Therefore, the models are mostly language-dependent and designed for English texts. Chinese is with the largest users in the world and has a tremendous amount of texts daily generated from the social media, etc. However, it has seldom been studied. On another hand, a general observation, which is valid in many languages, is that different segments of a piece of text, e.g. a clause, having different sentimental polarities. The existing deep learning models neglect the imbalanced sentiment distribution and only take the entire piece of the text. This paper proposes a novel sentiment-analysis model, which is capable of sentiment analysis task in Chinese. Firstly, the model segments a text into smaller units according to the punctuations to obtain the preliminary text representation, and this step is so-called segmentation-based representation. Meanwhile, its new framework parallel-CNN (convolutional neural network) simultaneously use all segments. This model, we call SBR-PCNN, concatenate the representation of each segment to obtain the final representation of the text which does not only contain the semantic and syntactic features but also retains the essential sequential information. The proposed method has been evaluated on two Chinese sentiment classification datasets and compared with a broad range of baselines. Experimental results show that the proposed approach achieves the state of the art results on two benchmarking datasets. Meanwhile, they demonstrate that our model may improve the performance of Chinese sentiment analysis.",
+isbn="978-3-319-69179-4"
+}
+
+@article{paper:journals/corr/BojanowskiGJM16,
+  author    = {Piotr Bojanowski and
+               Edouard Grave and
+               Armand Joulin and
+               Tomas Mikolov},
+  title     = {Enriching Word Vectors with Subword Information},
+  journal   = {CoRR},
+  volume    = {abs/1607.04606},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1607.04606},
+  archivePrefix = {arXiv},
+  eprint    = {1607.04606},
+  timestamp = {Mon, 13 Aug 2018 16:46:11 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/BojanowskiGJM16},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{paper:journals/corr/LucyG17,
+  author    = {Li Lucy and
+               Jon Gauthier},
+  title     = {Are distributional representations ready for the real world? Evaluating
+               word vectors for grounded perceptual meaning},
+  journal   = {CoRR},
+  volume    = {abs/1705.11168},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1705.11168},
+  archivePrefix = {arXiv},
+  eprint    = {1705.11168},
+  timestamp = {Mon, 13 Aug 2018 16:46:09 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/LucyG17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{paper:journals/corr/abs-1802-05365,
+  author    = {Matthew E. Peters and
+               Mark Neumann and
+               Mohit Iyyer and
+               Matt Gardner and
+               Christopher Clark and
+               Kenton Lee and
+               Luke Zettlemoyer},
+  title     = {Deep contextualized word representations},
+  journal   = {CoRR},
+  volume    = {abs/1802.05365},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1802.05365},
+  archivePrefix = {arXiv},
+  eprint    = {1802.05365},
+  timestamp = {Mon, 13 Aug 2018 16:48:54 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1802-05365},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@incollection{paper:NIPS2015_5949,
+title = {Semi-supervised Sequence Learning},
+author = {Dai, Andrew M and Le, Quoc V},
+booktitle = {Advances in Neural Information Processing Systems 28},
+editor = {C. Cortes and N. D. Lawrence and D. D. Lee and M. Sugiyama and R. Garnett},
+pages = {3079--3087},
+year = {2015},
+publisher = {Curran Associates, Inc.},
+url = {http://papers.nips.cc/paper/5949-semi-supervised-sequence-learning.pdf}
+}
+
+@article{paper:journals/corr/VaswaniSPUJGKP17,
+  author    = {Ashish Vaswani and
+               Noam Shazeer and
+               Niki Parmar and
+               Jakob Uszkoreit and
+               Llion Jones and
+               Aidan N. Gomez and
+               Lukasz Kaiser and
+               Illia Polosukhin},
+  title     = {Attention Is All You Need},
+  journal   = {CoRR},
+  volume    = {abs/1706.03762},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1706.03762},
+  archivePrefix = {arXiv},
+  eprint    = {1706.03762},
+  timestamp = {Mon, 13 Aug 2018 16:48:37 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/VaswaniSPUJGKP17},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{paper:bahdanau2014neural,
+  abstract = {Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. The models proposed recently for neural machine translation often belong to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation. In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder-decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. With this new approach, we achieve a translation performance comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation. Furthermore, qualitative analysis reveals that the (soft-)alignments found by the model agree well with our intuition.},
+  added-at = {2016-09-28T18:44:25.000+0200},
+  author = {Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+  biburl = {https://www.bibsonomy.org/bibtex/20d6b4e471c01b5a1d0be959d2f74494d/dallmann},
+  interhash = {bb2ca011eeafccb0bd2505c9476dcd10},
+  intrahash = {0d6b4e471c01b5a1d0be959d2f74494d},
+  journal = {arXiv preprint arXiv:1409.0473},
+  keywords = {neural_networks thema thema:attention},
+  timestamp = {2016-09-30T12:33:25.000+0200},
+  title = {Neural machine translation by jointly learning to align and translate},
+  year = 2014
+}
+
+@article{paper:journals/corr/abs-1906-05909,
+  author    = {Prajit Ramachandran and
+               Niki Parmar and
+               Ashish Vaswani and
+               Irwan Bello and
+               Anselm Levskaya and
+               Jonathon Shlens},
+  title     = {Stand-Alone Self-Attention in Vision Models},
+  journal   = {CoRR},
+  volume    = {abs/1906.05909},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1906.05909},
+  archivePrefix = {arXiv},
+  eprint    = {1906.05909},
+  timestamp = {Mon, 24 Jun 2019 17:28:45 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1906-05909},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
 

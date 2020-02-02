@@ -13,3 +13,60 @@ performances
 \section{QA Systems}
 \section{Generative Systems}
 \section{Conversational Agents}
+
+\section{Convex Dataset}
+\subsection{Data augmentation}
+Example:
+
+Who is the author of the Harry Potter series? OR Who wrote Harry Potter?
+What was the year of publication for the first book? OR When was it first published?
+Title of the first book? OR The first book was called what?
+What country was the book set in? OR It was set in what country?
+Which book has the highest page count? OR What's the longest book?
+
+
+\subsection{Human errors}
+Mechanical Truck gathering mistakes during the dataset building due to humans not respecting the standard format. Implying 32 wrong question-answers for a single mistake.
+When did the first The Fast and the Furious film come out?
+TO "answer": \url{"https://www.wikidata.org/wiki/Q155476"} instead of 22 June 2001
+however: "answer\_text": "The first film came out 22 June 2001."
+
+\subsection{Data inconstancy}
+"question": "When was he born?",
+"answer\_text": "1 August 1819" same as answer
+
+Sometimes it is binary, and some times it is in \gls{nl}
+
+"question": "When was it published?", 
+"answer\_text": "The book came out 30 June 1997 in the UK."
+
+This is an important inconstancy biaises for training.
+
+\subsection{Wrong answers}
+When did the first The Fast and the Furious film come out?
+
+GraphQA answers 1955, which is the date of publication of the original The Fast and the Furious movie. And non of the competing qa systems answer correctly to the question, neither to the provided false answer, neither the correct one.
+
+We didn't take time to go thru the whole dataset because time was missing, but funnily, GraphQA most often triggered warnings when the dataset had such errors, that's why we saw them.
+
+This all implies that GraphQA, could even perform better than the concurrents, but more exhaustive evaluations on additional datasets are required. But in the current version GraphQA is very time and computing resources consuming, which made it hard to evaluated it on multiple datasets in parallel to development 
+
+
+\subsection{Don't trust Mechanical Trucks}
+
+
+\section{What we learned from the project}
+\subsection{Don't trust someone else word without proving it yourself}
+Preprints: some good and mostly bad
+Published articles: some good, but mostly interative research with name dropping
+Published in conferences: some good, but be careful at where it is published, china is worrying
+Sadly everything looks alike with time
+Never trust what's written, always cross check the results and the given datasets or code if any
+Be critique with state-of-the-art and baseline clams as long as it was not reproduced.
+
+
+\section{What happens}
+
+Conversational,
+It tests each conversation with convex and graphqa as extension.
+Note that if no initial answer if found, no graph is built for platypus or qanswer, which skips the graph extension, as it's part of the nature of GraphQA and Convex
