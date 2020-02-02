@@ -1,6 +1,9 @@
 \chapter{Evaluation}
 \label{chap:evaluation}
 
+\subsection{Generative Deep Learning}
+\todo{Talk about the Variational Autoencoders and how they work. What are the problems to generate realistic sentences? Talk about the latest work made with VAE (2017?) and what is the outcome. Obviously talking about the Generative Adversarial Networks, and how they work. Talk about how to evaluate the generated outputs (with an oracle?) or with BLEU scores.}
+
 \section{Generative}
 \todo{Not a lot of work has been done in the domain of computer generated text, taking appart machine translation. So far I found a paper (GLTR: Statistical Detection and Visualization of Generated Text) that talks about a technic to detect generated content. And I found an article about the Readers’ perception of computer-generated news(: Credibility, expertise, and readability) which says that people like to read computer generated content because it's what it is, and humans are amazed about it, the long term have to be explored.}
 \paragraph{BLEU}
@@ -53,10 +56,13 @@ This all implies that GraphQA, could even perform better than the concurrents, b
 
 
 \subsection{Don't trust Mechanical Trucks}
+response format not respected \url{"https://www.wikidata.org/wiki/Q5951550?wprov=srpw1\_0"} instead of \url{"https://www.wikidata.org/wiki/Q5951550"}
+
+How tall is Avril Lavigne? -> (157 centimetre) additionally to the spelling mistake and a none standard format for the answer has the centimeter information is considered has a unit qualifier to the value 157, which must be the answer in this case, by checking the latest version of wikidata we couldn't find any spo containing the information.
 
 
 \section{What we learned from the project}
-\subsection{Don't trust someone else word without proving it yourself}
+\subsection{Only trust yourself}
 Preprints: some good and mostly bad
 Published articles: some good, but mostly interative research with name dropping
 Published in conferences: some good, but be careful at where it is published, china is worrying
@@ -65,8 +71,11 @@ Never trust what's written, always cross check the results and the given dataset
 Be critique with state-of-the-art and baseline clams as long as it was not reproduced.
 
 
+
 \section{What happens}
 
 Conversational,
 It tests each conversation with convex and graphqa as extension.
 Note that if no initial answer if found, no graph is built for platypus or qanswer, which skips the graph extension, as it's part of the nature of GraphQA and Convex
+
+

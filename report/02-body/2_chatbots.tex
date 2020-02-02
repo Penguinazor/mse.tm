@@ -12,7 +12,7 @@ It is interesting to note that the majority of the following sections could be i
 
 %\clearpage
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_mmc_state_of_ai_2019_gartner_cio_survey_31}
     \caption{Figure 31 from \textit{The State of AI 2019: Divergence \autocite{report:Kelnar2019}}. The top \gls{ai} applications used in European AI Startup in 2019 are Chatbots and Process optimization.}
@@ -50,7 +50,7 @@ The dispatcher acts as a middleware, who's unique job is to categories the user 
 \label{chatbot:retrieval}
 As it is today, Retrieval-based Chatbots are popular in the industry. Indeed, a lot of tools are available, and they perform well for specific tasks. However, the response capabilities are limited to their databases and the retrieval algorithm used. Indeed, for a given input, the system is using heuristics to find the best output from the pre-defined responses. The choice of the algorithms is wide and depends on the task the chatbot is required to perform. Regardless of the heuristic used, from keywords matching up to \gls{dl}, the output will always be retrieved from the database. Concerning the database itself, the data needs a pre-processing step to generate indexes linking the questions, answers, and apply pre-calculated scores. Pre-processing also implies that if the database is updated, a new pre-processing batch is required, which implies that the scalability or fine-tuning if compromised in the long run. We like to call this type of chatbots \say{Keywords-based}. See Figure ~\ref{fig:fig_retrieval_chatbot}.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_retrieval_chatbot}
     \caption{Illustrative representation of frequent retrieval chatbots architecture.}
@@ -62,7 +62,7 @@ As it is today, Retrieval-based Chatbots are popular in the industry. Indeed, a 
 \label{chatbot:rulebased}
 \say{Scenario-based}, as we name it, is the oldest and relatively straightforward system for chatbots. The Eliza\cite{website:eliza} Chatbot, as mentioned in the Chatbot History \ref{chatbot:history}, is scanning the input text for keywords, calculates a ranking for each keyword, and finally goes through a series of conditions called rules, and some randomness to reach the best ending leaf. Usually, the bot also includes a default output if the matching process fails, which we can still nowadays see in chatbots: \say{Hmm, this is interesting, tell me more.}. Such bots are often used for interactive chatbots, as it can, in a controlled environment, give a sense of deep meaning in the context of the conversation. Note that such systems require a lot of human power to build a frame for the bot to play in, and by this mean makes rule-based chatbots great for the specific scenario but is hard particularly hard to generalize. See Figure ~\ref{fig:fig_rulebased_chatbot}.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_rulebased_chatbot}
     \caption{Illustrative representation of frequent rule-based chatbots process.}
@@ -77,7 +77,7 @@ As the current result of all the incredible innovations made in the past years i
 \label{chatbot:supervised}
 \gls{sl} is probably the most common method used by Generative Chatbots, as it provides relative control over training. \gls{seq2seq} is commonly used as architecture for those chatbots, a \gls{nlp} version of the \gls{enc-dec}, which encodes the input words sequence and decode it into a words sequence as an answer into a framed conversation fashion. The training only requires a dataset containing a sentence and its desired response, the model will then map similar inputs with similar outputs. However, a clear limitation for this learning is that the model will for any input always have an answer, regardless of the overall meaning. Additionally, \gls{seq2seq} will prioritize the highest word apparition probabilities, meaning that data duplicates and requiring sentences will create a trend during decoding. E.g., \say{I don't know the answer.}. See Figure ~\ref{fig:fig_supervised_chabots} 
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_supervised_chabots}
     \caption{Illustrative representation of a Sequence to Sequence architecture.}
@@ -88,7 +88,7 @@ As the current result of all the incredible innovations made in the past years i
 \label{chatbot:adversarial}
 \gls{al} has driven attention thanks to Computer Vision \gls{gan} \autocite{paper:Karras2019stylegan2} by proving that it is possible to generate realistic human face \autocite{website:person_does_not_exist}. In the chatbots context, it can be extrapolated into a futuristic version of the Turing Test \ref{chatbot:history}, where machines are confronting themselves instead of humans. The concept implies the use of a training dataset containing human conversations, and compare them against the generated answer; the discriminator will then judge which is from a human and which is from an algorithm. Note that adversarial methods such as \gls{gan} are working well because of the nature of the data it plays with; indeed, pixels can be deeply noised, but words cannot be due to their discrete nature. See Figure ~\ref{fig:fig_adversarial_chatbots} 
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_adversarial_chatbots}
     \caption{Illustrative representation of an adversarial architecture in a chatbot context.}
@@ -100,9 +100,9 @@ Language Models are currently the most recent and the most promising models due 
 
 \subsection{Model Fine-Tuning}
 \label{chatbot:finetuning}
-With the specificity of \gls{model-ft}, {lm} as it provides the tools to build chatbots based on the ground of the language itself and then customize the model into a specific manner by fine-tuning it on a dataset fitting the domain required by the chatbots. Indeed, it is relatively easy to fine-tune a \gls{qa} dataset to a \gls{lm}, making the model able to answer questions instead of descriptively filling sentences. The main downside to those models is the large memory size required to run them. However, due to their nature, they are trained once and then fine-tuned. Note that training requires an enormous amount of computational power. E.g, The largest form of BERT \autocite{paper:devlin-etal-2019-bert} was trained on 16 TPUs for 4 days. Fine-tuning, on the other hand, scales down to few hours on a single TPU, which makes it relatively scalable to new domains. See Figure ~\ref{fig:fig_finetunedmodel_chatbots} 
+With the specificity of \gls{model-ft} see Figure ~\ref{fig:fig_finetunedmodel_chatbots}, \gls{lm} as it provides the tools to build chatbots based on the ground of the language itself and then customize the model into a specific manner by fine-tuning it on a dataset fitting the domain required by the chatbots. Indeed, it is relatively easy to fine-tune a \gls{qa} dataset to a \gls{lm}, making the model able to answer questions instead of descriptively filling sentences. The main downside to those models is the large memory size required to run them. However, due to their nature, they are trained once and then fine-tuned. Note that training requires an enormous amount of computational power. E.g, The largest form of BERT \autocite{paper:devlin-etal-2019-bert} was trained on 16 TPUs for 4 days. Fine-tuning, on the other hand, scales down to few hours on a single TPU, which makes it relatively scalable to new domains. 
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_finetunedmodel_chatbots}
     \caption{Illustrative representation of fine-tuning in a chatbot context.}
@@ -116,7 +116,7 @@ With the specificity of \gls{model-ft}, {lm} as it provides the tools to build c
 \label{chatbot:grounded}
 Falling in a particularly rare research field of \gls{ml} and \gls{nlp}, \gls{gl} can be seen as the future of \gls{mu} and \gls{mr}. In a chatbot context, the goal is to simulate, based on the Grounded Theory from the social sciences, how humans are using inductive reasoning to create conversations with unstructured knowledge. The idea is to give the ability to the bot, for any given input, to gather information from any data sources and provide an inductive output. E.g., Combining Knowledge Bases with weather forecaster. Second e.g., For example, for the given input: \say{What is the color in autumn of a leaf in Switzerland?}, 1) the bot would have first to identify the context keywords (color, leaf, autumn, switzerland), 2) the bot would select where to gather the information, 3) the would investigate the Wikidata Knowledge Base, Wikipedia, and The Weather Channel API, 4) the bot would formulate an answer based on the information it gathered. ~\ref{fig:fig_grounded_chatbots}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_grounded_chatbots}
     \caption{Illustrative representation of a grounded chatbot.}
@@ -171,7 +171,7 @@ They are neither limited by the range of tasks they can accomplish or the knowle
 }
 
 \setlength\tabcolsep{0pt}
-\begin{table}[H]
+\begin{table}
 \centering
 \begin{tabular}{c >{\bfseries}r @{\hspace{0.7em}}c @{\hspace{0.4em}}c @{\hspace{0.7em}}l}
   \multirow{6}{*}{\rotatebox{90}{\parbox{2.4em}{\bfseries\centering Tasks}}} 
@@ -192,7 +192,7 @@ As research progress in the \gls{nlp} field, chatbots are improving as an effort
 \section{Chatbots Cartography}
 As a result of this chapter, we created a chart on Figure ~\ref{fig:fig_chatbot_cartography} representing the current state of chatbots from our point of view. Note that a particular use-case could be in multiple leafs.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=\textwidth,keepaspectratio=true]{fig_chatbot_cartography}
     \caption{Represents the chatbots cartography as conclusion to the chatbot state-of-the-art chapter.}

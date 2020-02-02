@@ -18,7 +18,7 @@
 \newglossaryentry{transformer}
 {
   name={Transformer},
-  description={In \glsfirst{nlp}, a Transformer is a \glsfirst{seq2seq} architecture using the \glsfirst{attention}.}
+  description={In \glsfirst{nlp}, Transformers are similar to \glsfirst{seq2seq} architectures but are using a parallelized \glsfirst{attention}}
 }
 
 \newglossaryentry{gseq2seq}
@@ -91,6 +91,7 @@
 \newglossaryentry{glm}
 {
   name={Language Model},
+  plural={Language Models},
   description={In \glsfirst{nlp}, a Language Model is a \glsfirst{model} trained to provide likelihood probabilities of the following sequence of words in addition at providing the probability for each sequences of words}
 }
 \newglossaryentry{lm}
@@ -99,6 +100,7 @@
   name={LM},
   description={Language Model},
   first={Language Model (LM)\glsadd{glm}},
+  plural={Language Models (LMs)\glsadd{glm}},
   see=[Glossary:]{glm}
 }
 
@@ -194,6 +196,7 @@
 \newglossaryentry{generative-model}
 {
   name={Generative Model},
+  plural={Generative Models},
   description={In \glsfirst{ml}, Generative Models are generating random outputs from a single input by using the probability of observing the output based on the input. In other words, it models the probability of observation for a given target}
 }
 
@@ -206,7 +209,7 @@
 \newglossaryentry{gweak-ai}
 {
   name={Weak Artificial Intelligences},
-  description={In the context of the \gls{ai}, }
+  description={In the context of the \glsfirst{ai}, }
 }
 
 \newglossaryentry{weak-ai}
@@ -221,14 +224,14 @@
 \newglossaryentry{gl}
 {
   name={Ground Learning},
-  description={In the context of the \gls{ai}, Grounded Learning is based on the Grounded theory from the social sciences, which uses inductive reasoning. In the context of \gls{ai}, it is the mechanism of combining structured and unstructured data as small conceptual parts to then apply machine reasoning}
+  description={In the context of the \glsfirst{ai}, Grounded Learning is based on the Grounded theory from the social sciences, which uses inductive reasoning. In the context of \gls{ai}, it is the mechanism of combining structured and unstructured data as small conceptual parts to then apply machine reasoning}
 }
 
 
 \newglossaryentry{gmdp}
 {
   name={Markov Decision Process},
-  description={In the context of the \gls{rl}, this process models the ability of a predicting the next state of a finite-state machine-like process, such as a game, with only the information contained in the present state}
+  description={In the context of the \glsfirst{rl}, this process models the ability of a predicting the next state of a finite-state machine-like process, such as a game, with only the information contained in the present state}
 }
 
 \newglossaryentry{mdp}
@@ -243,7 +246,7 @@
 \newglossaryentry{grl}
 {
   name={Reinforcement Learning},
-  description={In \gls{ml}, this type of learning combines generally a \gls{mdp} environment with an approach similar to \gls{ul} as it does not require labelled data. The particularity of this technique is that it uses a notion of rewards to predict the best next-step by running a large amount of simulation as training}
+  description={In \glsfirst{ml}, this type of learning combines generally a \glsfirst{mdp} environment with an approach similar to \glsfirst{ul} as it does not require labelled data. The particularity of this technique is that it uses a notion of rewards to predict the best next-step by running a large amount of simulation as training}
 }
 
 \newglossaryentry{rl}
@@ -258,7 +261,7 @@
 \newglossaryentry{gul}
 {
   name={Unsupervised Learning},
-  description={In \gls{ml}, this type of learning implies the uses of unlabelled datasets to perform the training}
+  description={In \glsfirst{ml}, this type of learning implies the uses of unlabelled datasets to perform the training}
 }
 
 \newglossaryentry{ul}
@@ -273,7 +276,7 @@
 \newglossaryentry{gsl}
 {
   name={Supervised Learning},
-  description={In \gls{ml}, this type of learning implies the uses of labelled datasets to perform the training}
+  description={In \glsfirst{ml}, this type of learning implies the uses of labelled datasets to perform the training}
 }
 
 \newglossaryentry{sl}
@@ -288,7 +291,7 @@
 \newglossaryentry{gal}
 {
   name={Adversarial Learning},
-  description={In \gls{ml}, the concept of this technique relies on trying to fool models via malicious inputs. It can be interpreted as a game  a model is playing with itself by modifying the input in such a way that the model will recognize it as another input then learn from its mistake}
+  description={In \glsfirst{ml}, the concept of this technique relies on trying to fool models via malicious inputs. It can be interpreted as a game  a model is playing with itself by modifying the input in such a way that the model will recognize it as another input then learn from its mistake}
 }
 
 \newglossaryentry{al}
@@ -303,7 +306,7 @@
 \newglossaryentry{gmu}
 {
   name={Machine Understanding},
-  description={In \gls{ml}, Machine Understanding stays ambiguous in its definition. However, we use the term as the ability of representing knowledge at an atomic building blocks and fundamental relations}
+  description={In \glsfirst{ml}, Machine Understanding stays ambiguous in its definition. However, we use the term as the ability of representing knowledge at an atomic building blocks and fundamental relations}
 }
 
 \newglossaryentry{mu}
@@ -318,7 +321,7 @@
 \newglossaryentry{gmr}
 {
   name={Machine Reasoning},
-  description={In \gls{ml}, Machine Reasoning represent the ability to apply reasoning for a given input by using knowledge representations and logic patterns such as inductions, analogies, or abductions}
+  description={In \glsfirst{ml}, Machine Reasoning represent the ability to apply reasoning for a given input by using knowledge representations and logic patterns such as inductions, analogies, or abductions}
 }
 
 \newglossaryentry{mr}
@@ -334,7 +337,7 @@
 \newglossaryentry{gsnn}
 {
   name={Shallow Neural Network},
-  description={In \gls{ml}, similar to \gls{dl}, Shallow Neural Networks have a \gls{enc-dec} approach by having a single hidden layer, which often has a high amount of parameters}
+  description={In \glsfirst{ml}, similar to \glsfirst{dl}, Shallow Neural Networks have a \glsfirst{enc-dec} approach by having a single hidden layer, which often has a high amount of parameters}
 }
 
 \newglossaryentry{snn}
@@ -350,7 +353,7 @@
 \newglossaryentry{gbilm}
 {
   name={Bidirectional Language Model},
-  description={In \gls{nlp}, a Bidirectional Language Model represents a \gls{lm} combining the forward pass and a backward pass of the same corpora}
+  description={In \glsfirst{nlp}, a Bidirectional Language Model represents a \glsfirst{lm} combining the forward pass and a backward pass of the same corpora}
 }
 
 \newglossaryentry{bilm}
@@ -362,11 +365,49 @@
   see=[Glossary:]{gbilm}
 }
 
+\newglossaryentry{gbert}
+{
+  name={Bidirectional Encoder Representations from Transformers},
+  description={In \glsfirst{nlp}, \textit{Google} BERT is a large \gls{transformer}-based model trained at predicting masks within sequences}
+}
+
+\newglossaryentry{bert}
+{
+  type=\acronymtype,
+  name={BERT},
+  description={Bidirectional Encoder Representations from Transformers},
+  first={Bidirectional Encoder Representations from Transformers (BERT)\glsadd{gbert}},
+  see=[Glossary:]{gbert}
+}
 
 
+\newglossaryentry{ggpt2}
+{
+  name={Generative Pre-Training 2},
+  description={In \glsfirst{nlp}, \textit{Open-AI} GPT-2 is a large \gls{generative-model} using \glspl{transformer} to generate outputs based on the probability of the token observation}
+}
+
+\newglossaryentry{gpt2}
+{
+  type=\acronymtype,
+  name={GPT-2},
+  description={Generative Pre-Training 2},
+  first={Generative Pre-Training 2 (GPT-2)\glsadd{ggpt2}},
+  see=[Glossary:]{ggpt2}
+}
 
 
-
+%\gls{tf-idf}: Used to set the word importance in corpora.
+%\gls{cbow} [\ref{analyse:cbow}]: Counts the words occurrences throughout in corpus.
+%Skip-Grams [\ref{analyse:skip-grams}]: Counts the occurrences of the character throughout in corpus.
+%Topic modeling: Text clustering providing meaningful information to discover hidden structures via text chunking to identify the parts of the sentence in relation to each other.
+%Segmentation: Split corpus into predefined parts, such as: \textit{sentences, paragraphs, chapters, etc.}
+%Tokenization: Split the sentences into words.
+%Tagging: Based on a pre-made dictionary, it gives a new layer of meaning to the word, such as: \textit{verb, adverb, noun, people name, locations, number, etc.}
+%Dictionary: Use of tokenized words to build a dictionary, which could contain the word occurrences.
+% Stop Words: Ignoring words only used as liaisons, and not containing information, such as: \textit{and, or, etc.}
+% Stemming: Uniformizing words to their root by removing the prefix and suffix, such as: \textit{remake and loveable}.
+% Lemmatization: Replace the words to their base form, such as \textit{conjugated verb}.
 
 
 % ---------------------------------------------------------------------
@@ -409,8 +450,6 @@
 \newacronym{gs}{GS}{Generative System}
 \newacronym{cnn}{CNN}{Convolutional Neural Network}
 \newacronym{mn}{MN}{Memory Network}
-\newacronym{bert}{BERT}{Bidirectional Encoder Representations from Transformers}
-\newacronym{gpt2}{GPT-2}{Generative Pre-Training 2}
 \newacronym{spo}{SPO}{Subject-Predicate-Object Tuple}
 \newacronym{ie}{IE}{Information Extraction}
 \newacronym{sota}{SOTA}{State of the Art}
