@@ -1,0 +1,148 @@
+\chapter{Datasets}
+\label{chap:datasets}
+
+As the thesis aims at exploring a knowledge-based \gls{qa} (see Chapter \ref{chatbot:qa}) and dialogue (see Chapter \ref{chatbot:main-cats}) for chatbots combination, this chapter aims at synthesis and compare the current \gls{sota} datasets. With no surprise, we noticed that both \gls{nlp} research fields are currently in nested competitions, each field plays at defining the new \gls{sota} algorithm and dataset as baselines. In addition to \gls{nlp} breakthroughs, the competitive attitude makes the community results particularly active and exciting as new techniques, architectures, and incrementally more complex datasets releases at a monthly rate.
+
+\section{Scope Criterions}
+\label{dataset:criterions}
+Even if the datasets pool base for \gls{qa} systems and Dialogues is not as exhaustive as datasets present in other \gls{nlp} fields such as \gls{lm} or even in other computer science fields, e.g., Computer Vision. The datasets at our disposal are still large, lucky to the recent interest in the fields; however, they vary significantly from each other, e.g., based on their features such as Data Sources, Quantity, or Quality. To narrow the research, as many traits are subjective and intrinsically dependent on the required tasks themselves, we defined high priority criterias.
+
+\paragraph{Knowledge-based}
+The use of \gls{kb}, such as Wikidata, been defined in the specifications as an ideal knowledge database. 
+
+\paragraph{Open Domain}
+The ability to respond to \gls{open-domain} question is meaningful to the project as we use a \gls{kb} containing by design \gls{open-domain} relations. 
+
+\paragraph{Multiple Supporting Facts}
+As an elegant \gls{kb} and \gls{open-domain} combination, \gls{mh} allows to profit from the \gls{kb} linked-data architecture to handle more complex questions.
+
+\paragraph{Converstational}
+Support of contexts to handling nested questions is particularly meaningful in our opinion as it provides to \gls{qa} additional details layers to an answer.
+
+\paragraph{No Reasoning}
+Even if mentioning supporting criteria is essential, we believe that referring to explicitly not supporting criteria is also important. In our case, we expressly do not support \gls{mr} in any manner, as reasoning could be a quantifiable task in some datasets.
+
+
+\section{Question-Answering}
+\label{dataset:qa}
+Based on the criterions defined in (see Chapter \ref{dataset:criterions}), we made an overview Table \ref{tab:qa_overview_datasets} scoping \gls{qa} datasets related to our work. The following subsections describes the chosen datasets, ending with the worth mentioning datasets.
+
+\subsection{ConvQuestions}
+\label{dataset:convquestions}
+Late 2019, ConvQuestions, a crowdsourced \gls{mh} datasets of 11'200 augmented questions on 5 domains, released with CONVEX \autocite{paper:convex}. The data augmentation is done by asking the Turker to paraphrase each question once and keeping it semantically equivalent and interchangeable. To the initial 5-turns 350 conversations, a non-reordering permutation is applied to each question and its paraphrasing. Finally, the dataset provides a Wikidata \gls{nel} to each answer.
+
+\subsection{SimpleQuestions casted into Wikidata}
+\label{dataset:simplequestions}
+Initial built with crowd workers by \textit{Facebook AI Research}, SimpleQuestions\autocite{paper:journals/corr/BordesUCW15} was entity-linked to the Freebase \gls{kb} for its 108'442 (question, answer, language) triples. For their research, the AskPlatypus \autocite{paper:wikidata-benchmark} team used automatically generated mappings of 49'202 SimpleQuestions triples to Wikidata. Note that at the time of building their dataset, only 21'399 were answerable over Wikidata.
+
+\subsection{Worth Mentioning}
+Even as part of this work., the opportunity to use the following datasets was not appropriate; we believe that they are worth mentioning due to the attention they attracted lately with fine-tuned pre-trained language models (see Chapter \ref{nlp:transformers}) \gls{qa} systems.
+
+\paragraph{Stanford Question Answering}
+\label{dataset:squad}
+Initially presented in 2016, \gls{squad} \autocite{paper:journals/corr/RajpurkarZLL16} was propelled by the raised of \glspl{transformer} as it was the first massively crowdsourced reading comprehension Wikipedia-based dataset with a 86.6\% human performance, making it an exciting challenge for future \gls{qa} systems. In 2018, SQuAD 2.0 \autocite{paper:journals/corr/abs-1806-03822} was released with an additional set of 50'000 unanswerable questions, adversarially similar to answerable questions present in the first version. Note that by design, \gls{squad} focuses on confusing questions, approachable by combining paraphrasing and text summarization \gls{nlp} tasks.
+
+\paragraph{Conversational Question Answering Challenge}
+\label{dataset:coqa}
+Released in 2019, \gls{coqa} \autocite{paper:journals/corr/abs-1808-07042} is a \gls{mh} dataset containing 127'000 questions obtained from 8'000 conversation over 7 difference sources. With a human-performance of 88.8\% \gls{coqa} implies reading comprehension with coreference and pragmatic reasoning.
+
+\paragraph{Question Answering in Context}
+Since 2018, \gls{quac} \autocite{paper:journals/corr/abs-1808-07036} is challenging \gls{qa} system with its \gls{mh} dataset containing 100K crowdsourced evidence-based questions aiming at providing \gls{qa} in a dialog manner with context holding. Questions are designed to be open-ended, unanswerable without context and focusing on missing information.
+
+\paragraph{Compare \gls{squad}, \gls{coqa} and \gls{quac}}
+In 2019, a comparative study \autocite{paper:journals/corr/abs-1809-10735} have been conducted for the previously mention three datasets, comparing them on the basis of unanswerablility, \gls{mh}, and question abstraction.
+
+
+\section{Dialogue Datasets}
+\label{dataset:dialogue}
+As the project scope requires a chatbot able to answer \gls{nl}, we explored the available conversational datasets. Compared to the \gls{qa} datasets (see Chapter \ref{dataset:qa}), we discovered an underrepresented field of \gls{nlp} as the presence is relatively poor. Recapitulated in the Table \ref{tab:dialogues_overview_datasets}, we focused on the datasets featuring on \gls{qa} setups and multi-domains dialogue openness. We identified a unique dataset matching our requirements and two worth mentioning datasets, reinforcing an overall subjective view implying that dialog-based \gls{nlp} research currently in standby. Indeed, it would not surprise us, as pre-trained language models have started reaching a popular peak of interest, that the field of Dialogue gains a sudden interest and challenges \gls{gpt2} \autocite{papers:gpt2}.
+
+
+\subsection{Natural Questions Corpus}
+\label{dataset:googlenatural}
+Another jewel of 2019, with over 323'000 dialogues, \textit{Google's} Natural Questions Corpus dataset \autocite{paper:google-natural-questions} is a benchmarking approach for \gls{nl} generated answers in a \gls{qa} environment, making it particularly interesting for fine-tuned pre-trained language models like \gls{gpt2} \autocite{papers:gpt2}. Its goal is to provide an appropriate training and testing set for \gls{qa} systems, by pairing \textit{Google Search Engine}'s real user queries to a large pool of crowdsourced cross-annotations, they call \say{high quality annotations}, to guarantee answer quality over documents. Additionally, their mythology defines new metrics to evaluate answering performances. Interestingly, the dataset provides statistics, a long answer, a short answer, and an answer \gls{nel} to a Wikipedia page in most cases.
+
+\subsection{Worth Mentioning}
+The following datasets are particularly interesting from a Chatty (see Chapter \ref{chatbot:main-cats}) point of view, but no further out-of-the-box features without pre-processing or data augmentation are present. In our case, no Wikidata \gls{nel}  is available, nor the data is set explicitly in a \gls{qa} manner, making it particularly random in various contexts. However, the datasets are still impressive by their quantities and their conversational feature.
+
+\paragraph{Twitter Conversation Triple}
+This 2015 dataset uses Context-Message-Response triples as storage architecture, making it particularly interesting for parallelized training. Additionally, with its impressive 129 Million tweets tuples, it makes it the most substantial research dataset released until the time of writing. The dataset is currently combined with \gls{bleu} (see Chapter \ref{eval:bleu}) to evaluate generated dialogue, often present in the field of machine translation.
+
+\paragraph{Ubuntu Dialogue Corpus}
+\textit{Ubuntu} released its chat logs \autocite{paper:journals/corr/LowePSP15}, in 2016, containing over 1 Million multi-turns dialogues. The interest to this dataset comes from its relatively large size containing long technical contexts, and by design, it does not require exhaustive feature engineering to train over out-of-the-box.
+
+%\paragraph{TriviaQA}
+%\todo{2017. 650k question-answer-evidence triples.}
+
+%\paragraph{MS MARCO}
+%\todo{2016. (Machine Reading Comprehension). Has been used to evaluate generative models from Seq2Seq, Memory Networks, and Disciminative models. Uses Real and anonymized user queries from Bing. Context is given by a real web documents. All answers are human generated. Subsets are multiples anwsers or no as. All queries are tagged with segment informations. }
+
+\setlength{\tabcolsep}{8pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{landscape}
+\begin{longtable}[c]{@{}lccccllll@{}}
+\toprule
+Datasets & \begin{tabular}[c]{@{}c@{}}Release \\ Date\end{tabular} & \begin{tabular}[c]{@{}c@{}}Nested \\ Questions\end{tabular} & Hops           & \begin{tabular}[c]{@{}c@{}}Open \\ Domain\end{tabular} & Queries & Docs                                                  & Query Source                                                                                                                                            & Answer Type                                                    \\* \midrule
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+ConvQuestions                                                                 & 2019                                                    & \textbf{Yes}                                                & \textbf{Multi} & \textbf{5}                                           & 11K     & 350                                                   & \textbf{Wikidata}                                                                                                                                 & Spans                                                          \\
+\begin{tabular}[c]{@{}l@{}}Google \\ Natural Questions \\ Corpus\end{tabular} & 2019                                                    & No                                                          & Single         & \textbf{Yes}                                           & 323K    & ??                                                    & Wikipedia                                                                                                                                         & Spans                                                          \\
+SQuAD 2.0                                                                     & 2018                                                    & No                                                          & Single         & \textbf{Yes}                                           & 151K    & 853                                                   & Wikipedia                                                                                                                                         & \begin{tabular}[c]{@{}l@{}}Spans, \\ Unanswerable\end{tabular} \\
+CoQa                                                                          & 2018                                                    & \textbf{Yes}                                                & Single         & \textbf{Yes}                                           & 127K    & 8K                                                    & \begin{tabular}[c]{@{}l@{}}Children’s Stories, \\ Literature, \\ Mid/High School Exams, \\ News, \\ Wikipedia, \\ Reddit, \\ Science\end{tabular} & \begin{tabular}[c]{@{}l@{}}Spans, \\ Unanswerable\end{tabular} \\
+QuAC                                                                          & 2018                                                    & \textbf{Yes}                                                & Single         & \textbf{Yes}                                           & 100K    & 14K                                                   & Wikipedia                                                                                                                                         & \begin{tabular}[c]{@{}l@{}}Spans, \\ Unanswerable\end{tabular} \\
+HotpotQA                                                                      & 2018                                                    & No                                                          & \textbf{Multi} & \textbf{Yes}                                           & 113K    & 591                                                   & Wikipedia                                                                                                                                         & Spans                                                          \\
+DuReader                                                                      & 2018                                                    & No                                                          & Single         & \textbf{Yes}                                           & 300K    & 1.5M                                                  & Web Search                                                                                                                                        & Spans                                                          \\
+TriviaQA                                                                      & 2017                                                    & No                                                          & \textbf{Multi} & \textbf{Yes}                                           & 650K    & 95K                                                   & Trivia                                                                                                                                            & Spans                                                          \\
+RACE                                                                          & 2017                                                    & No                                                          & Single         & No                                                     & 97K     & 28K                                                   & Mid/High School Exams                                                                                                                             & \begin{tabular}[c]{@{}l@{}}Multiple \\ choice\end{tabular}     \\
+Narrative QA                                                                  & 2017                                                    & No                                                          & \textbf{Multi} & \textbf{Yes}                                           & 47K     & 1.6K                                                  & \begin{tabular}[c]{@{}l@{}}Movie Scripts, \\ Literature\end{tabular}                                                                              & Spans                                                          \\
+SearchQA                                                                      & 2017                                                    & No                                                          & \textbf{Multi} & \textbf{Yes}                                           & 140K    & 6.9M                                                  & Jeopardy                                                                                                                                          & Spans                                                          \\
+NewsQA                                                                        & 2017                                                    & No                                                          & Single         & \textbf{Yes}                                           & 100K    & 10K                                                   & News                                                                                                                                              & Spans                                                          \\
+\begin{tabular}[c]{@{}l@{}}QAngaroo \\ WikiHop\end{tabular}                   & 2017                                                    & No                                                          & \textbf{Multi} & \textbf{Yes}                                           & 51K     & 528K                                                  & \textbf{Wikidata}                                                                                                                                 & Spans                                                          \\
+\begin{tabular}[c]{@{}l@{}}QAngaroo \\ MedHop\end{tabular}                    & 2017                                                    & No                                                          & \textbf{Multi} & No                                                     & 2.5K    & 528K                                                  & \begin{tabular}[c]{@{}l@{}}Medline, \\ Drugbank\end{tabular}                                                                                      & Spans                                                          \\
+\begin{tabular}[c]{@{}l@{}}CNN / \\ Daily Mail\end{tabular}                   & 2016                                                    & No                                                          & Single         & \textbf{Yes}                                           & 1.4M    & \begin{tabular}[c]{@{}l@{}}93K / \\ 220K\end{tabular} & News                                                                                                                                              & Spans                                                          \\
+Children’s Book                                                               & 2016                                                    & No                                                          & Single         & No                                                     & 688K    & 108                                                   & Children’s stories                                                                                                                                & \begin{tabular}[c]{@{}l@{}}Multiple \\ Choice\end{tabular}     \\
+SQuAD                                                                         & 2016                                                    & No                                                          & Single         & \textbf{Yes}                                           & 108K    & 536                                                   & Wikipedia                                                                                                                                         & Spans                                                          \\
+MS MARCO                                                                      & 2016                                                    & No                                                          & Single         & \textbf{Yes}                                           & 100K    & 200K                                                  & Web Search                                                                                                                                        & \begin{tabular}[c]{@{}l@{}}Spans, \\ Unanswerable\end{tabular} \\
+SelQA                                                                         & 2016                                                    & No                                                          & Single         & \textbf{Yes}                                           & 8K      & 486                                                   & Wikipedia                                                                                                                                         & Spans                                                          \\
+INFOBOXQA                                                                     & 2016                                                    & No                                                          & Single         & \textbf{Yes}                                           & 15K     & 150                                                   & Wikipedia                                                                                                                                         & Spans                                                          \\
+WikiQA                                                                        & 2015                                                    & No                                                          & Single         & \textbf{Yes}                                           & 3K      & 29K                                                   & \begin{tabular}[c]{@{}l@{}}Wikipedia, \\ Web Search\end{tabular}                                                                                  & \begin{tabular}[c]{@{}l@{}}Sentence \\ Selection\end{tabular}  \\
+SimpleQuestions                                                              & 2015                                                    & No                                                          & Single         & \textbf{Yes}                                           & 109K    & 6K                                                    & \textbf{Freebase}                                                                                                                                 & Spans                                                          \\
+bAbI tasks 1 to 6                                                             & 2015                                                    & No                                                          & \textbf{Multi} & \textbf{Yes}                                           & 6M      & ??                                                    & ??                                                                                                                                                & Spans                                                          \\
+MCTest                                                                        & 2013                                                    & No                                                          & Single         & \textbf{Yes}                                           & 2.6K    & 660                                                   & Children’s stories                                                                                                                                & \begin{tabular}[c]{@{}l@{}}Multiple \\ Choice\end{tabular}     \\* \bottomrule
+\caption{Overview of Question Answering Datasets. In bold the features identified to be meaningful for the Thesis.}
+\label{tab:qa_overview_datasets}\\
+\end{longtable}
+\end{landscape}
+
+
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{landscape}
+\begin{longtable}[c]{@{}lcccrrll@{}}
+\toprule
+Datasets                                                                      & \begin{tabular}[c]{@{}c@{}}Release \\ Date\end{tabular} & QA           & \begin{tabular}[c]{@{}c@{}}Open \\ Domain\end{tabular} & Dialogues     & Utterances & Query Source    & Dialogue Type            \\* \midrule
+\endhead
+\bottomrule
+\endfoot
+\endlastfoot
+\begin{tabular}[c]{@{}l@{}}Google \\ Natural Questions \\ Corpus\end{tabular} & 2019                                                    & \textbf{Yes} & \textbf{Yes}                                           & 323K & ??         & Wikipedia       & Human to Human,          \\
+Reddit                                                                        & 2017                                                    & No           & \textbf{Yes}                                           & 54M  & ??         & Comments        & Human to Human           \\
+DSTC4                                                                         & 2016                                                    & \textbf{Yes} & No                                                     & 35            & ??         & Chat logs       & Human to Human           \\
+Twitter Triplets Corpus                                                       & 2015                                                    & No           & \textbf{Yes}                                           & 129M & 87M        & C-M-R Tweats    & Human to Human, blogging \\
+Ubuntu Dialogue                                                               & 2015                                                    & No           & \textbf{Yes}                                           & 1M   & 7M         & Chat logs       & Human to Human           \\
+Sina Weibo                                                                    & 2015                                                    & No           & \textbf{Yes}                                           & 4.4M & 8.8M       & Posts, Comments & Human to Human, blogging \\
+DSTC2                                                                         & 2014                                                    & No           & No                                                     & 3K            & 24K        & Chat logs       & Human to Computer        \\
+DSTC3                                                                         & 2014                                                    & \textbf{Yes} & No                                                     & 2.3K          & 15K        & Chat logs       & Human to Computer        \\
+DSTC1                                                                         & 2013                                                    & \textbf{Yes} & No                                                     & 15K           & 210K       & Chat logs       & Human to Computer        \\
+Twitter Corpus                                                                & 2010                                                    & No           & \textbf{Yes}                                           & 1.3M & 3M         & Posts, Tweats   & Human to Human, blogging \\
+OpenSubtitles                                                                 & 2009                                                    & No           & \textbf{Yes}                                           & 70M  & ??         & Movies          & Human to Human           \\* \bottomrule
+\caption{Dialogues Datasets Overview. In bold the features identified to be meaningful for the Thesis.}
+\label{tab:dialogues_overview_datasets}\\
+\end{longtable}
+\end{landscape}
+
