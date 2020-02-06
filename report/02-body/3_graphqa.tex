@@ -1,13 +1,75 @@
 \chapter{GraphQA}
 \label{chap:graphqa}
 
+\section{Initial Architecture}
+\todo{
+retrospectives to the analysis
+}
+
+\section{Going Further}
+\todo{
+Compare wordnet and word embedding, For unknown words or predicates try to transition the vector based on a synonyme from the wordnet, and compare with the word embeddings similarity word.
+}
+
+
+\section{GraphQA Architecture}
+Multi models from presentation
+Grounded approach with zero learning similar results
+
 3 Versions, detail all feature from version 3
 
+Compatible with telegram until version 2.0 due to the tensorflow session not being correctly managed by the python telegram bot package, so autocorrect is not working.
+
 \section{Version 0}
+\todo{
 initial features
+Pre print problems, made up values, confusing writing so we don't know what is motivational made ups and what are actual results.
+}
 
 \section{Version 1}
+\todo{
+}
 
 \section{Version 2}
+\todo{
+Filling paths holes with BERT
+}
+
 
 \section{Version 3}
+\todo{
+Extending sentences with GPT-2
+}
+
+\section{The technologies we used}
+\todo{
+HDT to index and compress and charge in ram the whole wikidata linked data database. Query compression format for linked data
+Spacy, industry famous for POS, POS-tagging, NER, NEL, etc, wikidata and wikipedia entity linker
+Spacy is an impressive industry used multi tool framework that we used as it allows combine \gls{ner} \gls{nel} \gls{pos} \gls{pos-tag} .. We used the new 2019 released version 2
+Deepcorrect
+NetworkX
+
+}
+
+\section{Premise}
+\todo{
+We tried to extend wikidata KB as the version we found is 2 years old. 
+What would it mean to build it from scractch?
+Try to optimise change the word embedding. 
+Optimise Entity Linking.
+The solution to use the online database in addition to the local version.
+}
+
+\section{Problems}
+\todo{
+Slow download of the database 50 GB
+Uncompressed data is 500 GB
+No enough ram to compress the latest version of the database
+Ram Crashes
+Use of a second machine
+Initial problems at downloading the dataset as the main source was down, so we had to contact the convex author to get a hold on the dataset
+Tried to extrapolate to other KB such as ?DEBD?, the algorithm focused on the Wikidata schematics, each KB as their own.
+Problems with cache
+}
+
+

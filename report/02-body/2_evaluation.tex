@@ -13,9 +13,11 @@ Empirically to the \gls{qa} Datasets \gls{sota} from chapter \ref{dataset:qa}, w
 CONVEX \autocite{paper:convex} has been developed to handle the ConvQuestions dataset (see Chapter \ref{dataset:convquestions}), and at time of writing, it was not evaluated on additional datasets. CONVEX uses subgraphs to manipulate Wikidata entities extracted via TAGME \autocite{paper:CIKM-2010-FerraginaS} from the Wikidata \gls{kb} to answer turn-based \gls{mh} conversational questions. The authors use the \gls{mrr} metric in addition to the Top-1 and Top-5.
 
 \subsection{qAnswer}
+\label{eval:qanswer}
 Initially build for the DBpedia \gls{kb}, qAnswer converts \gls{nl} questions into SPARQL query with a template-based model (see Chapter \ref{chatbot:templates}), and later got extended to the Wikidata \gls{kb}. It uses Wikipedia pages to extract lexicalizations and match \gls{nl}, entities, and relations. The authors originally used F1 as metric on the QALD-5 test corpus \autocite{paper:Lopezetal2013}, and later got evaluated on the ConvQuestions dataset (see Chapter \ref{dataset:convquestions}) by the CONVEX authors (see Chapter \ref{eval:convex}) with \gls{mrr}, Top-1 and Top-5 metrics.
 
 \subsection{Platypus}
+\label{eval:platypus}
 Similar to qAnswer, Platypus \autocite{paper:InProceedingsPellissier-Tanon.P-TD-d-ACM-S_18} is a template-based model (see Chapter \ref{chatbot:templates}) trained to build SPARQL request for Wikidata as well, but has been released in open-source. It was initially trained, tested, and evaluated with F1 on the Wikidata mapped SimpleQuestions dataset (see Chapter \ref{dataset:simplequestions}). Later Playtypus got additionally evaluated on the ConvQuestions dataset (see Chapter \ref{dataset:convquestions}) by the CONVEX authors (see Chapter \ref{eval:convex}) with \gls{mrr}, Top-1 and Top-5 metrics.
 
 \subsection{Honorable Mention}

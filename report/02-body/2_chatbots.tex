@@ -139,7 +139,8 @@ Falling in a particularly rare research field of \gls{ml} and \gls{nlp}, \gls{gl
 In this section, we are non-exhaustively naming a few recurring features appearing during our targeted research.
 
 \subsection{Context}
-Humans are intuitively and extensively relying on the context for conversational purposes, which implies similar capacities from dialogue-based chatbots. On a side note, one-way style dialogues such as commands or none-nested questions do not need to hold context to perform well.
+\label{chatbot:context}
+Humans are intuitively and extensively relying on the context for conversational purposes, which implies similar capacities from dialogue-based chatbots. In the scope of the Thesis, we are also using the term Multi-Turns Conversations to mention context holding implicitly. On a side note, one-way style dialogues such as commands or none-nested questions do not need to keep context to perform well.
 
 \paragraph{Short term context} Implying the ability for the bot to hold context for at least the current conversation, e.g., few keywords or on-the-fly \gls{model-ft}.
 
@@ -190,8 +191,9 @@ They are neither limited by the range of tasks they can accomplish nor by the kn
 \label{chatbot:general}
 As research progresses in the \gls{nlp} field, chatbots are improving as an effort to perform simultaneously well in various tasks and multi-knowledge bases. As a contemporary goal, in addition to any chatbot related tasks and broad knowledge expertise, General Chatbots must not be limited to their current capabilities, but on the contrary, be able to learn new tasks and subjects continuously. As far as we as this study went, we could not find \gls{sota} general chatbots as defined. However, companies like \textit{Amazon} are selling to a large public a feel to general chatbots with Alexa. Indeed, apart from ordering goodies from \textit{Amazon} and roughly conversing with Alexa, users can command their smart homes, use it as a personal assistant, or even program \textit{skills} to perform custom actions.
 
-\clearpage
+%\clearpage
 \section{Chatbots Cartography}
+\label{chatbot:cartography}
 As a result of this chapter, we created a chart on Figure ~\ref{fig:fig_chatbot_cartography} representing the current state of chatbots from our point of view. Note that a particular use-case could be in multiple leafs.
 
 \begin{figure}

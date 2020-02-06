@@ -2,6 +2,12 @@
 \label{chap:discussion}
 
 
+\subsection{Constatations}
+\todo{
+At the edge of technologies and sot
+we are only using techs release in late 2019
+}
+
 \section{Convex Dataset}
 \subsection{Data augmentation}
 Example:
@@ -62,3 +68,49 @@ Be critique with state-of-the-art and baseline clams as long as it was not repro
 Conversational,
 It tests each conversation with convex and graphqa as extension.
 Note that if no initial answer if found, no graph is built for platypus or qanswer, which skips the graph extension, as it's part of the nature of GraphQA and Convex
+
+
+\section{CONVEX}
+Terrible at many levels.
+
+We knew we started that the intial answer part was bad, but the results shown were still proimising. At the end we noticed that it was bullshit, as we couldn't reproduce the results in the paper, and even after contacting the author we got the confirmation that the results where not reproducable has expected as the best part of the paper was written for motivatitional purposed, but we didn't understand it that way at first.
+
+However, as a result we had no choice to go with it, and take the best of what we got so far, as it was too late to step back and take another approach by redesigning the whole process. 
+So we built from scratch a system fully based on sub-graphs, see chapter GRAPHQA.
+
+Contacted the author and debugged his code together at first, then we decided to fork the project and continue on our own by fixing and adapting the code to our needs as GraphQA progressed.
+
+
+
+\section{Questions left}
+\todo{
+It would be interesting to see if the machine becomes sophist with our algorithm.
+}
+
+
+In another work, we would like to explore the possibilities of merging these two modules, and evaluate if it's pertinent.
+
+Another question would be toward generalization, does generalisation needs to be only one and unique module able to do everything or can it be a clever composition of modules. Or does it need a specific module which is lightweight and able to generalise the tasks to send to the right module, as a coordinator.
+
+Explore the possibilities to combine sub-graphs to keep context and history of the conversation and been able to connect facts from various subjects together and summarise them cleverly.
+
+Say that sub-graphs could be pre generated to specific contextes, like news articles, and a module linking the initial question to a predefined sub-graph is possible.
+
+Sub-graphs can also be generate manually by news authors by using keywords and sub-graphs linking, or automatically. 
+
+
+\subsection{Subgraphs}
+\todo{
+Try to find a correlation between human thinking / reasoning the numerical knowledge graph representation, compared to IR, access structure, or even algorithms.
+}
+
+\section{Convex}
+\todo{
+Results returned are often pure luck, as if multiple objects are present in for the same subject and predicate, convex will return the first one. Additionally, as the NER depends on TAGME, it is up to them to return the right entities for entities with the same name in the wikipedia. Same when CONVEX do a web search.
+
+PROBABLY NOT Results are choatic, as randomness is possible during the IR operation done with TAGME, and particularly when retrive
+}
+
+
+
+
