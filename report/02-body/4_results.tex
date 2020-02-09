@@ -1,27 +1,160 @@
 \chapter{Results}
 \label{chap:results}
 
-\todo{Talk about how the methodology involved /resulted during the project}
+In this chapter, we review our work results split into the methodologies investigation and our comments on the benchmarks.
 
-\section{Problems}
-\todo{
-Memory Leaks in the latest version
-}
+\section{Methodologies}
+As stated in our analysis (see Chapter \ref{chap:analysis}), we planned to evaluate our \gls{qa} system by comparing our results with our defined baseline, CONVEX, which is the most similar \gls{qa} system we found during our \gls{sota} study (see Chapter \ref{chap:evaluation}). We additionally planned to evaluate our generated \gls{nl} answers by subjective humans as a way to frame the time available for the project.
 
+\subsection{Question Answering}
+It is interesting to note that we originally started benchmarking the second version of GraphQA at the beginning of the 5th sprint (see Chapter \ref{chap:final-project-management}). Sadly, we could not collect significative data from this initial evaluation, as the benchmark raised multiple bugs and resulted in the development of a new GraphQA iteration designed to handle the errors and, we believe, improved the overall results. We restarted the benchmark at the beginning of the 6th sprint on the third GraphQA iteration, in parallel to minor feature implementation, and bug fixes.
 
-\section{Hardware}
-\todo{
-iCoSys provided two Dedicated Servers, a lambda lab for the whole project, and a cpu based machine 
+\subsubsection{Constraints}
+During the benchmarking process we noticed two issues. The first is the computation time for GraphQA, and the second is a memory leak, that we did not have time to investigate, occurring every 24 hours of non-stop benchmarking on the latest version of GraphQA. Indeed, GraphQA is very computation-intensive and requires some time to run, which resulted in a relatively small amount of results (see the next benchmarking section). However, we estimate that for a \gls{zero-shot} approach, we have a reasonable answers pool for a first evaluation review, even if we can only agree that it is better to evaluate the most data available. 
 
-CPUs Specification
-• CPU: 8x 1.2Ghz AMD Opteron 6176 • RAM: 192GB DIMM
-}
+\subsubsection{Evaluation Fairness}
+\paragraph{ConvQuestions}
+We did a complete evaluation of all algorithms for two reasons. First, because we wanted to evaluate the reproducibility of the data published with CONVEX \autocite{paper:convex} and secondly, for consistency as the F1 metric is missing and since GraphQA won't evaluate on all questions from the dataset. We planned to compare fairly the four competitors on the same sampled dataset.
+
+\paragraph{SimpleQuestions}
+We are are also performing a complete evaluating of the dataset as we do not have the benchmark results for CONVEX on this dataset, and to be fair to GraphQA, which is slower, we are evaluating the four competitors on the same dataset sample.
+
+\subsubsection{Measures}
+We mentioned in the evaluation chapter \ref{chap:evaluation} our intention to use the \gls{mrr} and \gls{f1}, which we use in the final stage of our work. Indeed, as described in our previous section about Fairness, we evaluate the four competitors equally on the same sampled datasets, allowing us to measure \gls{mrr} and \gls{f1} fairly. \gls{f1} and \gls{mrr} will be used on ConvQuestions, and \gls{f1} on SimpleQuestions. 
+
+\subsection{Generated Natural Language Answers}
+Concerning the generated sentences evaluation, we asked humans to do it, as we didn't have enough time to implement the \textit{Google}'s natural questions protocol \autocite{paper:google-natural-questions}. Additionally, as the primary focus for GraphQA is the ability to build and use sub-knowledge graphs, the evaluations of how well performs the pre-trained language models we used are not particularly meaningful overall. However, we still believe that our approach at using pre-trained language models is an original solution to \gls{qa} tasks, as demonstrated with the generation of \gls{nl} answer based on paths extracted from \gls{wikidata} \gls{kb}.
 
 \section{Benchmarks}
-\todo{
-On ConvQuestions, we did a complete reevaluation of all alorithms for consistency. and the missing precision and recall metric.
-GraphQA is very long to run, which resulted in this amount of results. But it's already a good pool of questions to evaluate from. It's clear that it would be better to evaluate on more data. 
-Concerning the generated sentences evaluation we asked humans to do it, as we didn't have enough time to implement the google protocol. And the main focus of GraphQA is the ability of exploiting sub-graphs, and how transformers are performing at what they are designed to do.
-}
+
+\subsection{Hardware}
+\textit{iCoSys} provided two Dedicated Servers, a Lambda Lab, and a CPUs-based machine .
+
+\subsubsection{Lambda Lab Specification}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item CPU: 1x Intel(R) Core(TM) i9-9820X CPU @ 3.30GHz
+    \item RAM: 126GB
+    \item GPUs: 2x Nvidia Titan RTX
+\end{itemize}
+
+\subsubsection{CPUs-based machine Specification}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item CPU: 8x 1.2Ghz AMD Opteron 6176
+    \item RAM: 192GB DIMM
+\end{itemize}
+
+
+\subsection{Tables}
+
+\subsubsection{SimpleQuestions}
+The sampled dataset contains 4486 questions. Based on the following results, we can preliminary conclude that GraphQA performs poorer than its competitors, but CONVEX is leading the chart. However, we cannot, with the sampled dataset, discuss of the statistical significance. (See Table \ref{tab:results-benchmark-simple})
+
+\begin{longtable}[c]{@{}ll@{}}
+\toprule
+Competitors & F1      \\* \midrule
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+qAnswer     & 0.23375 \\
+Platypus:   & 0.00878 \\
+Convex      & 0.36367 \\
+GraphQA     & 0.13724 \\* \bottomrule
+\caption{Benchmark F1 results for the SimpleQuestions dataset  with 4486 sampled Questions}
+\label{tab:results-benchmark-simple}\\
+\end{longtable}
+
+
+\subsubsection{ConvQuestions + GraphQA as multi-turn extension}
+The sampled datasets contains 1444 questions. Based on the following results, we can preliminary conclude that GraphQA performs similarly, but CONVEX is leading the chart. However, we cannot, with the sampled dataset, discuss of the statistical significance. (See Table \ref{tab:results-benchmark-convq-graphqa})
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+Competitors        & F1                   & MRR                  \\* \midrule
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+qAnswer + GraphQA  & 0.05756   & 0.03044  \\
+Platypus + GraphQA & 0.0                  & 0.0                  \\
+Convex + GraphQA   & 0.09452  & 0.05619  \\
+GraphQA + GraphQA  & 0.05981 & 0.04724 \\* \bottomrule
+\caption{Benchmark F1 and MRR results for competitors extended by GraphQA on the ConvQuestions dataset with 1444 sampled Questions}
+\label{tab:results-benchmark-convq-graphqa}\\
+\end{longtable}
+
+\subsubsection{ConvQuestions + CONVEX as multi-turn extension}
+The sampled datasets contains 1444 questions. Based on the following results, we can preliminary conclude that GraphQA performs similarly, but CONVEX is leading the chart. However, we cannot, with the sampled dataset, discuss of the statistical significance. (See Table \ref{tab:results-benchmark-convq-convex}) 
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule
+Competitors       & F1                  & MRR                  \\* \midrule
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+qAnswer + CONVEX  & 0.03257 & 0.01964 \\
+Platypus + CONVEX & 0.0                 & 0.0                  \\
+Convex + CONVEX   & 0.12459 & 0.08445  \\
+GraphQA + CONVEX  & 0.08221  & 0.05312  \\* \bottomrule
+\caption{Benchmark F1 and MRR results for competitors extended by CONVEX on the ConvQuestion dataset with 1444 sampled Questions}
+\label{tab:results-benchmark-convq-convex}\\
+\end{longtable}
+
+\subsubsection{Natural Language Answer generation}
+The sampled datasets contains 10 correct questions-answer tuples. The user were required to give a satisfaction categorization grade from 1 \say{Bad} to 5 (\say{Good}), 0 being \say{No Opinon}.  Based on the following results, we can preliminary conclude that the \gls{nl} answer satisfactory to the user. However, we cannot, with the sampled dataset, discuss of the statistical significance. 
+(See Table \ref{tab:results-benchmark-nl-questions})
+
+
+
+\subsection{Question-Answering Results conclusion}
+GraphQA is not in the current do not perform better than CONVEX or qAnswer. We also observe that the results for Platypus are way below its competitors; a reason could be due to the small sample dataset used. We also could retrieve the average computing time for GraphQA, which is 182 seconds for an average of 5 seconds for other competitors.
+
+
+\subsection{Natural Language Answers Results conclusion}
+We observed that for the answer that GraphQA can answer, the \gls{nl} answers are generated with a relative quality. All 5 testers testers enjoyed the overall experience. We are satisfied with the results, even if the answers are more descriptive than natural; however, we do not believe that the showroom made with pre-trained language models is a sign of quality and overall success. We end up with an average score of 4.14 / 5, an exciting score.
+
+\setlength{\tabcolsep}{.5pt}
+\renewcommand{\arraystretch}{0.05}
+
+\begin{landscape}
+\begin{longtable}[c]{@{}llc@{}}
+\toprule
+Questions                                                        & Natural Language Answers                                                            & \begin{tabular}[c]{@{}c@{}}Avg. \\ Score\end{tabular} \\* \midrule
+\endhead
+%
+\bottomrule
+\endfoot
+%
+\endlastfoot
+%
+Which actor voiced the Unicorn in The Last Unicorn?              & Mia Farrow, the voice actor of The Last Unicorn in a character role as The Unicorn. & 4.6                                                   \\
+Who is the wife of Barack Obama?                                 & Michelle Obama, first spouse of Barack Obama.                                       & 4.7                                                   \\
+When was the publication date of the movie Grease?               & 02 August 1978, - start date of Grease.                                             & 3.4                                                   \\
+Which is the nation of Martha Mattox                             & United States of America: first country of citizenship of Martha Mattox             & 4.4                                                   \\
+Where did roger marquis die                                      & Holyoke is the place of birth of Roger Marquis and his given name is Roger.         & 3.2                                                   \\
+Who is the author that wrote the book Moby Dick                  & Herman Melville, the author of Moby'dick.                                           & 4.2                                                   \\
+of what nationality is ken mcgoogan                              & Canada is his country of citizenship of Ken McGoogan.                               & 4.9                                                   \\
+whats the name of the organization that was founded by,frei otto & I don't know.                                                                       & 5                                                     \\
+which stadium do the wests tigers play in                        & Stadium Australia is the home venue of Wests Tigers.                                & 5                                                     \\
+By whom was Misery written?                                      & Commune of France, an instance of national Misery.                                  & 2                                                     \\* \bottomrule
+\caption{Benchmark the score for the dataset with 10 sampled working Question-Answer (tuples). The score is averaged from a grade from 0 to 5.}
+\label{tab:results-benchmark-nl-questions}\\
+\end{longtable}
+\end{landscape}
+
+
+
 
 

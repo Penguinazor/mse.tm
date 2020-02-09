@@ -12,19 +12,19 @@
 \newglossaryentry{model}
 {
   name={Model},
-  description={In \glsfirst{ml}, a model is the representation of the assumptions made by the algorithm during the training phase. Models are used to output a result based on a provided input and the learned patterns}
+  description={In \glsfirst{ml}, a Model is the representation of the assumptions made by the algorithm during the training phase. Models are used to output a result based on a provided input and the learned patterns}
 }
 
 \newglossaryentry{transformer}
 {
   name={Transformer},
-  description={In \glsfirst{nlp}, Transformers are similar to \glsfirst{seq2seq} architectures but are using a parallelized \glsfirst{attention}}
+  description={In \glsfirst{nlp}, Transformers are similar to \glsfirst{seq2seq} architectures but use a parallelized \glsfirst{attention}}
 }
 
 \newglossaryentry{gseq2seq}
 {
   name={Sequence-to-Sequence},
-  description={In \glsfirst{ml}, a Sequence-to-Sequence or Seq2Seq is an \glsfirst{enc-dec} \glsfirst{nn} that, for a given sequence of elements as input, outputs another sequence of elements}
+  description={In \glsfirst{ml}, a Sequence-to-Sequence or Seq2Seq is an \glsfirst{enc-dec} Neural Network that, for a given sequence of elements as input, outputs another sequence of elements}
 }
 \newglossaryentry{seq2seq}
 {
@@ -38,13 +38,13 @@
 \newglossaryentry{enc-dec}
 {
   name={Encoder-Decoder},
-  description={In \glsfirst{ml}, Encoder-Decoder are two \glspl{nn} that work in pair. The Encoder generates a fixed-size output vector from any sized vector input, and the Decoder generates from the Encoder output a vector that could be any size}
+  description={In \glsfirst{ml}, Encoder-Decoder are two \glspl{nn} that work in pair. The Encoder generates a fixed-size output vector from any sized input vector, and the Decoder generates from the Encoder's output a vector that could be of any size}
 }
 
 \newglossaryentry{attention}
 {
   name={Attention Mechanism},
-  description={In \glsfirst{nlp}, the Attention Mechanism is an algorithm used to calculate the relational weight between elements in a sequence of elements (most often words)}
+  description={In \glsfirst{nlp}, the Attention Mechanism is an algorithm used to compute the relational weight between elements in a sequence of elements e.g., words}
 }
 
 \newglossaryentry{model-ft}
@@ -92,7 +92,7 @@
 {
   name={Language Model},
   plural={Language Models},
-  description={In \glsfirst{nlp}, a Language Model is a \glsfirst{model} trained to provide likelihood probabilities of the following sequence of words in addition at providing the probability for each sequences of words}
+  description={In \glsfirst{nlp}, a Language Model is a \glsfirst{model} trained to provide likelihood probabilities of a following sequence of words in addition to providing the probability for each sequences of words}
 }
 \newglossaryentry{lm}
 {
@@ -107,7 +107,7 @@
 \newglossaryentry{gmrr}
 {
   name={Mean Reciprocal Rank},
-  description={In \glsfirst{ir}, the Mean Reciprocal Rank provides a statistic measure of the quality of a returned ranked list of items for a query. MRR takes only in account the highest-ranked relevant item to the query}
+  description={In \glsfirst{ir}, the Mean Reciprocal Rank provides a statistic measure of the quality of a returned ranked list of items for a query. MRR takes into account only the highest-ranked relevant item to the query}
 }
 \newglossaryentry{mrr}
 {
@@ -122,7 +122,7 @@
 \newglossaryentry{sh}
 {
   name={Single-Hop},
-  description={In \glsfirst{qa} Systems, a Single-Hop implies that the answer is within a single \gls{hop} of the question. Generally, a unique Predicate separates the question Subject and the answer Object}
+  description={In \glsfirst{qa} Systems, a Single-Hop implies that the answer is within a single \gls{hop} of the question. Generally, a unique predicate separates the question subject and the answer object}
 }
 
 \newglossaryentry{hop}
@@ -135,25 +135,25 @@
 \newglossaryentry{mh}
 {
   name={Multi-Hop},
-  description={In \glsfirst{qa} Systems, a Multi-Hop implies that the answer is within multiple \gls{hop} of the question. In other words, the answer requires a combination of different information to be answerable. Generally, extra qualifying Subject-Predicate-Object Tuples (SPOs) are separating the question Subject and the answer Object}
+  description={In \glsfirst{qa} Systems, a Multi-Hop implies that the answer is within multiple \gls{hop} of the question. In other words, the answer requires a combination of different pieces of information to be answerable. Generally, extra qualifying Subject-Predicate-Object Tuples (SPOs) are separating the question Subject and the answer Object}
 }
 
 \newglossaryentry{we}
 {
   name={Word Embedding},
-  description={In \glsfirst{nlp}, the Word Embedding is a technique for word representation as vectors in an embedding matrix. Additionally, it has often the particularity of preserving the semantical analogies of word-vectors}
+  description={In \glsfirst{nlp}, the Word Embedding is a technique for word representation as vectors in an embedding matrix. Additionally, Word Embedding has often the particularity of preserving the semantical analogies of word-vectors}
 }
 
 \newglossaryentry{pos}
 {
-  name={Part of Speech},
-  description={In \glsfirst{nlp}, Part of Speech is a technique used to categorize words that behave syntactically similarly}
+  name={Part-of-Speech},
+  description={In \glsfirst{nlp}, Part-of-Speech is a technique used to categorize words that behave syntactically similarly}
 }
 
 \newglossaryentry{pos-tag}
 {
-  name={Part of Speech Tagging},
-  description={In \glsfirst{nlp}, The Part of Speech Tagging is extending the \glsfirst{pos} by adding a label to the word depending on its context (the neighboring words)}
+  name={Part-of-Speech Tagging},
+  description={In \glsfirst{nlp}, The Part-of-Speech Tagging is extending the \glsfirst{pos} by adding a label to the word depending on its context (the neighboring words)}
 }
 
 
@@ -166,13 +166,13 @@
 \newglossaryentry{nel}
 {
   name={Named-Entity Linking},
-  description={In \glsfirst{nlp}, Name-Entity Linking extends the \glsfirst{ner} by providing an unique identifier to each word allowing a mapping in various databases (useful in translations)}
+  description={In \glsfirst{nlp}, Named-Entity Linking extends the \glsfirst{ner} by providing a unique identifier to each word allowing a mapping in various databases (useful in translations)}
 }
 
 \newglossaryentry{open-domain}
 {
   name={Open Domain},
-  description={In \glsfirst{ir}, the support of Open Domain questions provides no restriction to the questions' subject}
+  description={In \glsfirst{ir}, the support of Open Domain questions provides no restriction to the subject of the questions}
 }
 
 \newglossaryentry{closed-ended}
@@ -197,13 +197,13 @@
 {
   name={Generative Model},
   plural={Generative Models},
-  description={In \glsfirst{ml}, Generative Models are generating random outputs from a single input by using the probability of observing the output based on the input. In other words, it models the probability of observation for a given target}
+  description={In \glsfirst{ml}, Generative Models generate random outputs from a single input by using the probability of observing the output based on the input. In other words, it models the probability of observation for a given target}
 }
 
 \newglossaryentry{generative}
 {
   name={Generative},
-  description={In the context of the Thesis, we are using the generic word \say{Generative} as the concept of an algorithm able to generate outputs in a meaningful but unpredictable manner from an input, which includes \glspl{lm} and \glspl{generative-model}}
+  description={In the context of the thesis, we are using the generic word \say{Generative} as the concept of an algorithm able to generate outputs in a meaningful but unpredictable manner from an input, which includes \glspl{lm} and \glspl{generative-model}}
 }
 
 \newglossaryentry{gweak-ai}
@@ -231,7 +231,7 @@
 \newglossaryentry{gmdp}
 {
   name={Markov Decision Process},
-  description={In the context of the \glsfirst{rl}, this process models the ability to predict the next state of a finite-state machine-like process, such as a game, with only the information contained in the present state}
+  description={In the context of the \glsfirst{rl}, this process models the ability to predict the next state of a finite-state-machine-like process, such as a game, using only the information contained in the present state}
 }
 
 \newglossaryentry{mdp}
@@ -246,7 +246,7 @@
 \newglossaryentry{grl}
 {
   name={Reinforcement Learning},
-  description={In \glsfirst{ml}, this type of learning combines generally a \glsfirst{mdp} environment with an approach similar to \glsfirst{ul} as it does not require labelled data. The particularity of this technique is that it uses a notion of rewards to predict the best next-step by running a large amount of simulations as training}
+  description={In \glsfirst{ml}, Reinforcement Learning combines a \glsfirst{mdp} environment with an approach similar to \glsfirst{ul} as this type of learning does not require labelled data. The particularity of this technique is that it uses a notion of rewards to predict the best next step by running a large amount of simulations as training}
 }
 
 \newglossaryentry{rl}
@@ -261,7 +261,7 @@
 \newglossaryentry{gul}
 {
   name={Unsupervised Learning},
-  description={In \glsfirst{ml}, this type of learning implies the use of unlabelled datasets to perform the training}
+  description={In \glsfirst{ml}, Unsupervised Learning implies the use of unlabelled datasets to perform the training}
 }
 
 \newglossaryentry{ul}
@@ -291,7 +291,7 @@
 \newglossaryentry{gal}
 {
   name={Adversarial Learning},
-  description={In \glsfirst{ml}, the concept of this technique relies on trying to fool models via malicious inputs. Interpretable as a game a model plays with itself, in which the model modifies the input in such a way that it will recognize it as another input, and then learn from its mistake}
+  description={In \glsfirst{ml}, the concept of this technique relies on trying to fool models via malicious inputs. Interpretable as a game, a model plays with itself and modifies the input in such a way that the model will recognize the input as a different one, and then learn from its mistake}
 }
 
 \newglossaryentry{al}
@@ -306,7 +306,7 @@
 \newglossaryentry{gmu}
 {
   name={Machine Understanding},
-  description={In \glsfirst{ml}, Machine Understanding stays ambiguous in its definition. However, we use the term as the ability to represent knowledge as atomic building blocks and fundamental relations}
+  description={In \glsfirst{ml}, we use Machine Understanding as the ability to represent knowledge as atomic building blocks and fundamental relations}
 }
 
 \newglossaryentry{mu}
@@ -337,7 +337,7 @@
 \newglossaryentry{gsnn}
 {
   name={Shallow Neural Network},
-  description={In \glsfirst{ml}, similar to \glsfirst{dl}, Shallow Neural Networks have a \glsfirst{enc-dec} approach by having a single hidden layer, which often has a high amount of parameters}
+  description={In \glsfirst{ml}, similar to \glsfirst{dl}, Shallow Neural Networks have a \glsfirst{enc-dec} approach by having a single hidden layer, which often has a large amount of parameters}
 }
 
 \newglossaryentry{snn}
@@ -400,19 +400,25 @@
 \newglossaryentry{bleu}
 {
   name={BLEU},
-  description={In \glsfirst{nlp}, The Bilingual Evaluation Understudy (BLEU) is an evaluation metrics particularly popular in machine translation as it is an automatic processing}
+  description={In \glsfirst{nlp}, The Bilingual Evaluation Understudy (BLEU) is an evaluation metrics particularly popular in machine translation as the processing is automatic}
 }
 
 \newglossaryentry{oracle}
 {
   name={Oracle},
-  description={In \glsfirst{ml}, an Oracle is defined by an entity who knows that knows the ground truth to all questions. It can be a human, or an algorithm querying perfectly a database}
+  description={In \glsfirst{ml}, an Oracle is defined as an entity that knows the ground truth to all questions. An Oracle can be a human, or an algorithm querying a database with no errors}
 }
 
 \newglossaryentry{wikidata}
 {
   name={Wikidata},
   description={Wikidata is a community-based \gls{kb}, based on Freebase originally. It stores its data into a linked-data format with Subject-Predicate-Object Tuples (SPOs)}
+}
+
+\newglossaryentry{f1}
+{
+  name={F1},
+  description={In Statistics, the F1 score is used to compute an accuracy metric, using Precision and Recall. \[ 2*((P*R)/(P+R)) \] }
 }
 
 
@@ -465,7 +471,7 @@
 \newacronym{poc}{POC}{Proof of Concept}
 \newacronym{mvp}{MVP}{Minimum Viable Product}
 \newacronym{kiss}{KISS}{Keep It Stupid Simple}
-\newacronym{qa}{QA}{Question Answering}
+\newacronym{qa}{QA}{Question-Answering}
 \newacronym{gs}{GS}{Generative System}
 \newacronym{cnn}{CNN}{Convolutional Neural Network}
 \newacronym{mn}{MN}{Memory Network}

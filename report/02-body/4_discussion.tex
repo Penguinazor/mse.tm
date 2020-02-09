@@ -1,115 +1,102 @@
 \chapter{Discussion}
 \label{chap:discussion}
 
-
-\subsection{Constatations}
-\todo{
-At the edge of technologies and sot
-we are only using techs release in late 2019
-}
-
-\section{Convex Dataset}
-\subsection{Data augmentation}
-Example:
-
-Who is the author of the Harry Potter series? OR Who wrote Harry Potter?
-What was the year of publication for the first book? OR When was it first published?
-Title of the first book? OR The first book was called what?
-What country was the book set in? OR It was set in what country?
-Which book has the highest page count? OR What's the longest book?
+The following chapter summarizes our state of mind about the project. As we choose a storytelling approach for our Master's Thesis, discussions were diluted within all chapters making the traditional academic discussion chapter, the only place to discuss our humble opinions. First of all, we want to remind that GraphQA is a \gls{poc}, and its performances are not particularly important, as it is the project itself, with its original approaches that must be evaluated. As an observation, we are using \gls{sota} technologies mostly released in late 2019 (and even for some, such as CONVEX was released during our last \gls{sota} sprint), reinforcing our statement that \gls{nlp} is driving a lot of interest lately. To structure this chapter, we will mostly talk about our main competitor and its dataset. Indeed, we indirectly spent the Master's Thesis analyzing their work, as GraphQA is using a similar sub-knowledge graph approach. We believed that it is important to discuss how our competitors perform. We will finally overview what we learned from our overall research and threw a few questions that are left to answer.
 
 
-\subsection{Human errors}
-Mechanical Truck gathering mistakes during the dataset building due to humans not respecting the standard format. Implying 32 wrong question-answers for a single mistake.
-When did the first The Fast and the Furious film come out?
-TO "answer": \url{"https://www.wikidata.org/wiki/Q155476"} instead of 22 June 2001
-however: "answer\_text": "The first film came out 22 June 2001."
+\section{ConvQuestions Dataset}
+As we praised this dataset the whole thesis, we believe for good reason, as it a \gls{sota} in the field of  \gls{mh} and multi-turns. However, in this section we will overview the dataset their contribution to \gls{nlp}, the limitation, and the required improvement for future \gls{mh} and multi-turns conversational datasets.
 
-\subsection{Data inconstancy}
-"question": "When was he born?",
-"answer\_text": "1 August 1819" same as answer
+\subsection{Data Augmentation}
+As a contribution, ConvQuestion, they suggested a new data augmentation approach for \gls{nlp}. Data augmentation is very popular in the field of Computer Vision; however, it is often a bad solution in \gls{nlp} as it often uses computer-generated paraphrasing by applying \gls{we} similarities. With ConvQuestion, the authors took a clever shift by asking humans to generate the paraphrasing, with the constraint that the paraphrased sentence must be semantically equivalent and interchangeable with its original sentence. Besides, ConvQuestions guarantees that the conversations are not permuted to not alter nested questions. It won't surprise us that \gls{qa} evaluation-based datasets such as \gls{squad} will use this method to enhance their datasets. On a final note, ConvQuestions is a relatively small dataset with its 11'200 questions compared to the 150'000 questions from \gls{squad} 2.0; however, the plot twist is that ConvQuestion used a total of 1'750 unique questions to generate their dataset with only a single permutation per questions.
 
-Sometimes it is binary, and some times it is in \gls{nl}
+\subsubsection{Paraphrasing examples}
+\textbf{Who is the author of the Harry Potter series?} Who wrote Harry Potter?\\
+\textbf{What was the year of publication for the first book?} When was it first published?\\
+\textbf{Title of the first book?} The first book was called what?\\
+\textbf{What country was the book set in?} It was set in what country?\\
+\textbf{Which book has the highest page count?} What's the longest book?
 
-"question": "When was it published?", 
-"answer\_text": "The book came out 30 June 1997 in the UK."
+\subsection{Human Errors}
+\label{discussion:humans}
+The main limitation we noticed is the crowdsourcing itself. Even if this solution is at the time of writing, probably the best to generate \gls{nlp} datasets, Mechanical Truckers often make mistakes. Indeed, it is difficult for large datasets to have no mistakes; it is human nature to get distracted, particularly for repetitive tasks such as being a Mechanical Trucker. A common inattentiveness we noticed, in addition to laziness while paraphrasing (see the previous subsection), is that the truckers do answering mistakes and are not always respecting the format guidelines, implying 32 ($2^5$) wrong question-answers tuples for a single mistake. For a small dataset such as ConvQuestion, the ratio of unanswerable tuples can rise dramatically and induce important bias while training models. We regret that the author didn't take the time to review correctly their relatively small dataset, or implement a crowdsourced cross-checking protocol like \textit{Google} did for their Natural Dialogue dataset \autocite{paper:google-natural-questions}. 
 
-This is an important inconstancy biaises for training.
+\subsubsection{Mechanical Trucker error examples}
 
-\subsection{Wrong answers}
-When did the first The Fast and the Furious film come out?
-
-GraphQA answers 1955, which is the date of publication of the original The Fast and the Furious movie. And non of the competing qa systems answer correctly to the question, neither to the provided false answer, neither the correct one.
-
-We didn't take time to go thru the whole dataset because time was missing, but funnily, GraphQA most often triggered warnings when the dataset had such errors, that's why we saw them.
-
-This all implies that GraphQA, could even perform better than the concurrents, but more exhaustive evaluations on additional datasets are required. But in the current version GraphQA is very time and computing resources consuming, which made it hard to evaluated it on multiple datasets in parallel to development 
-
-
-\subsection{Don't trust Mechanical Trucks}
-response format not respected \url{"https://www.wikidata.org/wiki/Q5951550?wprov=srpw1\_0"} instead of \url{"https://www.wikidata.org/wiki/Q5951550"}
-
-How tall is Avril Lavigne? -> (157 centimetre) additionally to the spelling mistake and a none standard format for the answer has the centimeter information is considered has a unit qualifier to the value 157, which must be the answer in this case, by checking the latest version of wikidata we couldn't find any spo containing the information.
+\paragraph{Answering Mistake}
+In this situation, the Trucker provided the wrong answer to the question. \\
+\textbf{Question:} When did the first The Fast and the Furious film come out?\\
+\textbf{Expected answer:} 1955\\
+\textbf{Wrong answer:} 22 June 2001
 
 
-\section{What we learned from the project}
-\subsection{Only trust yourself}
-Preprints: some good and mostly bad
-Published articles: some good, but mostly interative research with name dropping
-Published in conferences: some good, but be careful at where it is published, china is worrying
-Sadly everything looks alike with time
-Never trust what's written, always cross check the results and the given datasets or code if any
-Be critique with state-of-the-art and baseline clams as long as it was not reproduced.
+\paragraph{Inattentiveness} 
+For this example we extrapolate the expected answer from the full \gls{nl} answer span \say{The first film came out 22 June 2001.}. \\
+\textbf{Question:} When did the first The Fast and the Furious film come out? \\
+\textbf{Expected answer:} 22 June 2001 \\
+\textbf{Trucker's answer:} https://www.wikidata.org/wiki/Q155476\\
+
+\paragraph{Not Respecting the Answer Guideline} 
+In this example, the Trucker did not providing a \gls{nl} answer span. \\
+\textbf{Question:} When was he born? \\
+\textbf{Answer:} 1 August 1819 \\
+\textbf{Answer Span:} 1 August 1819 \\
 
 
-
-\section{What happens}
-
-Conversational,
-It tests each conversation with convex and graphqa as extension.
-Note that if no initial answer if found, no graph is built for platypus or qanswer, which skips the graph extension, as it's part of the nature of GraphQA and Convex
+\subsection{GraphQA}
+The previous sections would probably not exist if GraphQA didn't find them. Indeed, as we were monitoring GraphQA answers, we noticed that sometimes the answers were correct, but the benchmark said otherwise. To our regrets, due to time constraints, we could not go through the whole dataset; however, this observation implies that an application for GraphQA and its competitors could be to \gls{oracle} crowdsourced datasets.
 
 
 \section{CONVEX}
-Terrible at many levels.
+In our opinion, CONVEX is a pioneer in the field of sub-knowledge graphs and we amire their approach as they inspired  GraphQA. They were chosen during our analysis as a starting project for our \gls{qa} system and planned to enhance their work. However, as stated in the GraphQA chapter \ref{chap:graphqa}, we took another path and, in the following sections, we want to discuss this decision and discuss their work as our main competitor.
 
-We knew we started that the intial answer part was bad, but the results shown were still proimising. At the end we noticed that it was bullshit, as we couldn't reproduce the results in the paper, and even after contacting the author we got the confirmation that the results where not reproducable has expected as the best part of the paper was written for motivatitional purposed, but we didn't understand it that way at first.
+\subsubsection{Initial Issues}
+Our initial grip with CONVEX code was not the smoothest, as the authors provided their code in the state with few refactoring bugs. We contacted the authors and debugged the code together; then, we decided to fork the project and continue on our own by fixing and adapting the code to our needs as GraphQA progressed. After the project investigation, we noticed that we could not reproduce the results in the paper. We contacted the authors to notify the issues: they explained that they used an undisclosed split of the dataset to obtain their results, and confirmed that the code works as expected.
 
-However, as a result we had no choice to go with it, and take the best of what we got so far, as it was too late to step back and take another approach by redesigning the whole process. 
-So we built from scratch a system fully based on sub-graphs, see chapter GRAPHQA.
+\subsubsection{Q0 Problems in more details}
+Based on the previous authors' statement, we started to investigate further how CONVEX answers questions. As the paper acknowledges that Q0 is their bottleneck, we decided to explore further why it is indeed a bottleneck; we observed that often the answers are lucky guesses as it returns the first Object from a multi solutions Subject-Predicate tuples. E.g., \say{Who is the actor of this role in this movie?}: by design, the query would return the list of all actors to the requested movie, which we call hypothesis in GraphQA. CONVEX, in this particular case, will return the first element. Their \gls{ner} depends on TAGME, which is proprietary, meaning that it's up to a black box to return the \gls{wikidata} entity identified based on the context of the sentence. It is indeed hard to trust a proprietary system to return the right entities when multiple entities have the same name.
 
-Contacted the author and debugged his code together at first, then we decided to fork the project and continue on our own by fixing and adapting the code to our needs as GraphQA progressed.
-
-
-
-\section{Questions left}
-\todo{
-It would be interesting to see if the machine becomes sophist with our algorithm.
-}
+\subsubsection{GraphQA from Scratch}
+Based on the previous analysis, it was clear that building an open-source module for Q0 was the priority task. We investigated in details how to integrate our module to the existing system, by going deeper into the code and understanding all functions. Aside from odd computations, we could not find the context-graph generation as described in the paper, so we asked the author about it. They explained that the part we are looking for, which we imagined to be the most exciting, were written in the paper with made-up values for motivational purposes. From this point, we lost all motivation to enhance CONVEX as its key feature was not implemented and required an architecture remodeling to get it to work. Annoyingly, the clock was ticking, and we could not step back to evaluate a new solution. Based on the CONVEX's motivational purpose feature, we built from scratch an open-source architecture handling scoring by design. (See chapter \ref{chap:graphqa})
 
 
-In another work, we would like to explore the possibilities of merging these two modules, and evaluate if it's pertinent.
+\section{Lesson Learned}
+This project gave us lessons about the academic experience and the field of \gls{nlp}.
 
-Another question would be toward generalization, does generalisation needs to be only one and unique module able to do everything or can it be a clever composition of modules. Or does it need a specific module which is lightweight and able to generalise the tasks to send to the right module, as a coordinator.
+\subsection{Only trust yourself}
+\paragraph{Preprints} Some papers are good, but they are mostly bad as they are either repetitive or pointless with name-dropping.
+\paragraph{Published in journal} Mostly good, they often do nested research by publishing a paper at each iteration of their project.
+\paragraph{Published in conferences} Often useful, but be careful with the origin country.
+\paragraph{Repetitivity} We realized that after a reasonable amount of paper read, we are not surprised anymore about the breakthroughs.
+\paragraph{Never trust claims in articles} Always reproduce the results and inspect the given code and datasets.
+\paragraph{Stay critic} Every day a new \gls{sota} or baseline is claimed, wait for reproduced results before excitement.
 
-Explore the possibilities to combine sub-graphs to keep context and history of the conversation and been able to connect facts from various subjects together and summarise them cleverly.
-
-Say that sub-graphs could be pre generated to specific contextes, like news articles, and a module linking the initial question to a predefined sub-graph is possible.
-
-Sub-graphs can also be generate manually by news authors by using keywords and sub-graphs linking, or automatically. 
+\subsection{Don't trust Mechanical Trucks}
+As stated in the previous section \ref{discussion:humans}, it is essential when using Mechanical Trucks always to add a verification layer.
 
 
-\subsection{Subgraphs}
-\todo{
-Try to find a correlation between human thinking / reasoning the numerical knowledge graph representation, compared to IR, access structure, or even algorithms.
-}
+\section{Questions Left}
+As our project end, in addition to questioning seeds left in chapters, we still have remaining questions that we wished we had time to explore. We listed them here as a starting point for GraphQA enhancement or other contributions.
 
-\section{Convex}
-\todo{
-Results returned are often pure luck, as if multiple objects are present in for the same subject and predicate, convex will return the first one. Additionally, as the NER depends on TAGME, it is up to them to return the right entities for entities with the same name in the wikipedia. Same when CONVEX do a web search.
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Would it be possible for \gls{qa} system to become sophist, and what would be the implications?
+    \item Would it be possible to use GraphQA as a sophist chatbot?
+    \item Would it be possible to train a model to use context graphs?
+    \item Would it be possible to build a tool for users to create context graphs manually?
+    \item Would it be possible to build a tool to parse articles and generate context graphs automatically? 
+    \item Investigate the correlation between human thinking and reasoning with knowledge graphs representation.
+    \item Compare knowledge graphs representation to \gls{ir} and access structure.
+    \item Compare Wordnet and \gls{we} in the scope of GraphQA.
+\end{itemize}
 
-PROBABLY NOT Results are choatic, as randomness is possible during the IR operation done with TAGME, and particularly when retrive
-}
+
+
+
+
+
+
+
 
 
 
